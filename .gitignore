@@ -229,3 +229,10 @@ pip-log.txt
 *.vxml_c
 *.vcss_c
 *.vjs_c
+*.vmesh_c
+*.vanim_c
+*.vagrp_c
+*.vmdl_c
+*.bin
+
+*.psd
