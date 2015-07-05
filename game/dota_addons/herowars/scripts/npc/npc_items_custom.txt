@@ -1,0 +1,2997 @@
+"DOTAAbilities"
+{
+
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// Tomes
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		"item_tome_of_strength"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9000"														
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_gauntlets"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"20"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemPermanent"					"0"
+			"ItemInitialCharges"			"1"
+			//"SideShop" "1"
+			//"SecretShop" "1"
+			"ItemCastOnPickup"				"1"
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_str"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"1"
+				}
+			}
+		}
+
+		"item_tome_of_strength_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9001"														
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_belt_of_strength"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"100"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_str"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"5"
+				}
+			}
+		}
+
+		"item_tome_of_agility"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9002"														
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_slippers"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"24"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_agi"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"1"
+				}
+			}
+		}
+
+		"item_tome_of_agility_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9003"														
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_band_of_elvenskin"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"120"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_agi"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"5"
+				}
+			}
+		}
+
+		"item_tome_of_intellect"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9004"														
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_mantle"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"16"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_int"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"1"
+				}
+			}
+		}
+
+		"item_tome_of_intellect_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9005"														
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_robe"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"80"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_int"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"5"
+				}
+			}
+		}
+		
+		"item_tome_of_power"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9006"
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_ultimate_orb"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"100"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_power"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"2"
+				}
+			}
+		}
+
+		"item_tome_of_experience"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9007"
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+			"AbilityTextureName"			"item_winter_greevil_treat"
+			//"ItemStockMax"					"30"
+			//"ItemStockInitial"				"30"
+			//"ItemStockTime"					"1.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"100"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemInitialCharges"			"1"
+			"ItemStackable"					"1"
+			"ItemPermanent"					"0"
+			"ItemCastOnPickup"				"1"
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"item_tome_exp"
+					"bonus_stat"	"%bonus_stat"
+
+				}
+				"FireSound"
+				{
+					"Target"	 "CASTER"
+					"EffectName" "DOTA_Item.ClarityPotion.Activate"
+				}
+				"SpendCharge"
+				{}
+			}
+
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stat"			"500"
+				}
+			}
+		}
+
+
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// Potions
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		"item_potion_of_healing"
+		{
+			"ID"							"9101"
+
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			
+			"Model"							"models/props_gameplay/salve.vmdl" //Green
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpRingShop"
+			"UIDropSound"					"Item.DropRingShop"
+			"WorldDropSound"				"Item.DropRingWorld"
+			
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName"			"item_salve"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"100"
+			"AbilityCastPoint"				"0.0"
+
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"75"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemStackable"					"1"
+			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+			"ItemPermanent"					"0"
+			"ItemInitialCharges"			"1"
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"RunScript"
+				{
+					"ScriptFile"		"custom_items/custom_items.lua"
+					"Function"			"item_healing_pot"
+					"Target"			"UNIT"
+					"heal_amount"		"%heal_amount"
+
+				}
+				"AttachEffect"
+				{
+					"Target"					"CASTER"
+					"EffectName"				"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+					"EffectAttachType"			"follow_origin"
+				}
+				"FireSound"
+				{
+					"Target" 		"UNIT"
+					"EffectName" 	"DOTA_Item.HealingSalve.Activate"
+				}
+				
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"heal_amount"				"500"
+				}
+			}
+		}
+		
+		"item_potion_of_mana"
+		{
+			"ID"							"9102"
+
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			
+			"Model"							"models/props_gameplay/clarity.vmdl"
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpRingShop"
+			"UIDropSound"					"Item.DropRingShop"
+			"WorldDropSound"				"Item.DropRingWorld"
+			
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName"			"item_clarity"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"100"
+			"AbilityCastPoint"				"0.0"
+
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"50"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"ItemStackable"					"1"
+			"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+			"ItemPermanent"					"0"
+			"ItemInitialCharges"			"1"
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"RunScript"
+				{
+					"ScriptFile"		"custom_items/custom_items.lua"
+					"Function"			"item_mana_pot"
+					"Target"			"UNIT"
+					"mana_amount"		"%mana_amount"
+				}
+				"AttachEffect"
+				{
+					"Target"					"CASTER"
+					"EffectName"				"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak_cast.vpcf"
+					"EffectAttachType"			"follow_origin"
+				}
+				"FireSound"
+				{
+					"Target" 		"UNIT"
+					"EffectName" 	"DOTA_Item.ClarityPotion.Activate"
+				}
+				
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"mana_amount"				"300"
+				}
+			}
+		}
+
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// Purchasable Spells
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		//=================================================================================================================
+		//Anti Magic Shield
+		//=================================================================================================================
+		"item_anti_magic_shield"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9201"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_black_king_bar"
+
+			"Model"							"models/props_items/black_king_bar.vmdl"
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"500"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"20.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"75"
+			"ItemCost"						"500"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "3"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"ApplyModifier"
+				{
+					"Target"	"TARGET"
+					"ModifierName"	"modifier_spell_immunity"
+				}
+				"FireSound"
+				{
+					"EffectName"	"DOTA_Item.BlackKingBar.Activate"
+					"Target"		"CASTER"
+				}			
+			}
+			"Modifiers"
+			{
+				"modifier_spell_immunity"
+				{
+					"IsBuff"	"1"
+					"IsHidden"	"0"
+					"Duration"  "%duration"
+					"States"
+					{
+					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+					}
+					//"Properties" MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
+					"EffectName" 				"particles/items_fx/black_king_bar_avatar.vpcf"
+					"EffectAttachType"			"attach_hitloc"
+				}
+
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"90"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"500"
+				}
+			}
+		}
+
+
+		//=================================================================================================================
+		// Cyclone
+		//=================================================================================================================
+		"item_not_cyclone"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9203"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_cyclone"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"400"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"5.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"150"
+			"ItemCost"						"150"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"ApplyModifier"
+				{
+					"Target"	"TARGET"
+					"ModifierName"	"cyclone"
+				}
+				"FireSound"
+				{
+					"EffectName"	"DOTA_Item.Cyclone.Activate"
+					"Target"		"CASTER"
+				}			
+			}
+
+			"Modifiers"
+			{
+				"cyclone"
+				{
+					"IsBuff"		"1"
+					"IsHidden"		"0"
+					"IsPurgable" 	"1"
+					"Duration"		"%duration"
+
+					"OnCreated"
+					{	
+						"AttachEffect"
+						{
+							"Target" 	"TARGET"
+							"EffectName"		"particles/items_fx/cyclone.vpcf"
+							"EffectAttachType" 	"follow_origin"
+							"EffectRadius"				"200"
+						}
+					}
+					"ThinkInterval"	"2"
+					"OnIntervalThink"
+					{
+						"AttachEffect"
+						{
+							"Target" 	"TARGET"
+							"EffectName"		"particles/items_fx/cyclone.vpcf"
+							"EffectAttachType" 	"follow_origin"
+							"EffectRadius"				"200"
+						}
+					}
+					"States"
+					{
+						"MODIFIER_STATE_ATTACK_IMMUNE" 	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_MAGIC_IMMUNE" 	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_SILENCED" 		"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_DISARMED" 		"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_ROOTED" 		"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+						
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"6"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"150"
+				}
+			}
+
+		}
+
+		//=================================================================================================================
+		//Ensare
+		//=================================================================================================================
+		"item_ensare"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9204"	
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityTextureName"			"item_quarterstaff"
+
+			// Unit Targeting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			//"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH" //for testing so I can cast on myself
+			      
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+			//Model
+			"Model"							"models/props_winter/present.vmdl"
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			//Sounds
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"400"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"16.0"
+			"AbilityManaCost"				"0"
+
+			//Item Stuff
+			"ItemCost"						"325"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+
+			"OnSpellStart"
+			{
+
+				"SpendCharge"
+				{}		
+				"TrackingProjectile"
+				{
+					"Target" "TARGET"
+					"EffectName" "particles/units/heroes/hero_siren/siren_net_projectile_launch.vpcf"
+					//"EffectName" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+					"Dodgeable" 		"1"
+					"ProvidesVision" 	"0"
+					//"VisionRadius" "300"
+					"MoveSpeed" 		"1500"
+					"SourceAttachment" 	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				}
+
+				"FireSound"
+				{
+					"EffectName" "Hero_Batrider.FlamingLasso.Cast"
+					"Target" "CASTER"
+				}
+
+			}
+
+			"OnProjectileHitUnit"
+			{
+
+				"ApplyModifier"
+				{
+					"Target"	"TARGET"
+					"ModifierName"	"ensare_debuff"
+				}
+				
+				"FireSound"
+				{
+					"EffectName" "Hero_Broodmother.SpinWebCast"
+					"Target" "TARGET"
+				}
+			}
+
+			"Modifiers"
+			{
+				"ensare_debuff"
+				{
+					"IsBuff"		"1"
+					"IsHidden"		"0"
+					"IsPurgable"	"1"
+					"Duration"  	"%duration"
+					"OnCreated"
+					{	
+						"AttachEffect"
+						{
+							"Target" 	"TARGET"
+							"EffectName"		"particles/units/heroes/hero_siren/siren_net.vpcf"
+							"EffectAttachType" 	"follow_origin"
+						}
+					}
+					"States"
+					{
+						"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"10" //should be 2
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"325"
+				}
+			}
+		}
+
+		//=================================================================================================================
+		//Hurl Boulder
+		//=================================================================================================================
+		"item_hurl_boulder"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9205"	
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityTextureName"			"item_winter_coal"
+
+			// Precache
+			//-------------------------------------------------------------------------------------------------------------
+			"precache"
+			 {
+			  	"soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+			  	"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+			  	"particle"    "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder_explode.vpcf"
+			 }
+
+			// Unit Targeting
+			//-------------------------------------------------------------------------------------------------------------
+			//"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+
+			//Model
+			"Model"							"models/props_winter/present.vmdl"
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			//Sounds
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"800"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"8.0"
+			"AbilityManaCost"				"75"
+
+			//Item Stuff
+			"ItemCost"						"325"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "3"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+
+			//Start the action
+			//__________________________________________________________________________________________________________
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"TrackingProjectile"
+				{
+				    "Target"           "TARGET"
+				    "EffectName"       "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+				    "Dodgeable"        "1"
+				    "ProvidesVision"   "0"
+				    //"VisionRadius"     "300"
+				    "MoveSpeed"        "%speed"
+				    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_BountyHunter.Shuriken"
+					"Target"	"CASTER"
+				}
+
+
+			}
+
+			"OnProjectileHitUnit"
+		    {
+		    	"FireEffect"
+		    	{
+		    		"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder_explode.vpcf"
+		    		"Target"		"TARGET"
+		    		"EffectAttachType"	"attach_hitloc"
+		    	}
+
+
+		        "Damage"
+		        {
+		        	"Type"		"DAMAGE_TYPE_MAGICAL"
+		        	"Damage"	"%bonus_damage"
+		        	"Target"	"TARGET"
+		        }
+
+		        "Stun"
+		        {
+		        	"Duration"	"%mini_stun"
+		        	"Target"	"TARGET"        	
+		        }
+
+		        "FireSound"
+		        {
+		        	"EffectName"	"Hero_BountyHunter.Shuriken.Impact"
+		        	"Target"		"TARGET"
+		        }
+
+		    }
+
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"			"100"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"speed"					"1000"
+				}
+
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"mini_stun"				"2.0"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"325"
+				}
+			}
+		}
+
+		//=================================================================================================================
+		//Invisibility Item
+		//=================================================================================================================
+		"item_invisibility"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9206"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_smoke_of_deceit"
+
+			"Model"							"models/props_winter/present.vmdl"
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"300"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"0.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"50"
+			"ItemCost"						"600"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "3"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk.vpcf"
+					"Target"	"CASTER"
+					"EffectAttachType"	"attach_origin"
+				}
+				"FireSound"
+				{
+					"Target"	"CASTER"
+					"EffectName"	"Hero_BountyHunter.WindWalk"
+				}
+
+				"ApplyModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invis_datadriven"
+				}
+				"ApplyModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+
+			}
+
+			"Modifiers"
+			{
+				"modifier_invis_datadriven"
+				{
+					"Duration"	"%duration"
+					"isBuff"	"1"
+					"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
+					"EffectAttachType"	"follow_origin"
+
+					"OnAttackLanded"
+					{
+						"RemoveModifier"
+						{
+							"Target"	"CASTER"
+							"ModifierName"	"modifier_invis_datadriven"
+						}
+						"RemoveModifier"
+						{
+							"Target"	"CASTER"
+							"ModifierName"	"modifier_invisible"
+						}
+					}
+
+					"OnAbilityExecuted"
+					{
+						"RemoveModifier"
+						{
+							"Target"	"CASTER"
+							"ModifierName"	"modifier_invis_datadriven"
+						}
+						"RemoveModifier"
+						{
+							"Target"	"CASTER"
+							"ModifierName"	"modifier_invisible"
+						}
+					}
+
+
+					"States"
+					{
+						"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED" 
+					}
+
+					"OnDestroy"
+					{
+						"RemoveModifier"
+						{
+							"Target"
+							{
+								"Center"	"CASTER"
+								"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+							}
+							"ModifierName"	"modifier_invisible"
+						}
+					}
+
+				}
+			}
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"duration"					"120.0"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"cost"						"600"
+				}
+			}
+		}
+		//=================================================================================================================
+		//Polymorph (units only no heroes)
+		//=================================================================================================================
+		"item_polymorph"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9207"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_sheepstick"
+
+			"Model"							"models/props_winter/present.vmdl"
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"500"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"0.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"220"
+			"ItemCost"						"125"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"duration"					"120"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"movespeed"					"100"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"125"
+				}
+			}
+
+			"OnSpellStart"
+			{
+
+				"SpendCharge"
+				{}
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_voodoo_datadriven"
+					"Target"		"TARGET"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_voodoo_datadriven"
+				{
+					"IsDebuff"	"1"
+					"Duration"	"%duration"
+
+					"OnCreated"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"custom_items/custom_items.lua"
+							"Function"		"voodoo_start"
+							"model"			"models/props_gameplay/frog.vmdl"
+						}
+
+					}
+
+					"OnDestroy"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"custom_items/custom_items.lua"
+							"Function"		"voodoo_end"
+						}
+
+					}
+
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"		"%movespeed"
+					}
+
+					"States"
+					{
+						"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_MUTED"		"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_HEXED"		"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_EVADE_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_BLOCK_DISABLED"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
+		}
+
+		//=================================================================================================================
+		//Rejuvenation (400hp over 12s)
+		//=================================================================================================================
+		"item_rejuvenation"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9208"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_tango"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"400"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"0.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"125"
+			"ItemCost"						"200"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"ApplyModifier"
+				{
+					"Target"	"TARGET"
+					"ModifierName"	"rejuvenation"
+				}
+				"FireSound"
+				{
+					"EffectName"	"DOTA_Item.HealingSalve.Activate"
+					"Target"		"CASTER"
+				}			
+			}
+
+			"Modifiers"
+			{
+				"rejuvenation"
+				{
+					"IsBuff"		"1"
+					"IsHidden"		"0"
+					"IsPurgable" 	"1"
+					"Duration"		"12"
+
+					"OnCreated"
+					{	
+						"AttachEffect"
+						{
+							"Target" 	"TARGET"
+							"EffectName"		"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_heal.vpcf"
+							"EffectAttachType" 	"follow_origin"
+							"EffectRadius"				"200"
+						}
+
+						"Heal"
+						{
+							"HealAmount"	"100"
+							"Target"		"TARGET"
+						}
+					}
+					"ThinkInterval"	"4"
+					"OnIntervalThink"
+					{
+
+						"Heal"
+						{
+							"HealAmount"	"100"
+							"Target"		"TARGET"
+						}
+					}
+				}
+						
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"12"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"200"
+				}
+			}
+
+		}
+
+		//=================================================================================================================
+		//Sleep
+		//=================================================================================================================
+		"item_sleep"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9209"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_greevil_whistle"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"700"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"5.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"75"
+			"ItemCost"						"325"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"ApplyModifier"
+				{
+					"Target"		"TARGET"
+					"ModifierName"	"my_sleep"
+				}
+				"FireSound"
+				{
+					"EffectName"	"DOTA_Item.Pipe.Activate"
+					"Target"		"CASTER"
+				}			
+			}
+
+			"Modifiers"
+			{
+				"my_sleep"
+				{
+					"IsBuff"		"1"
+					"IsHidden"		"0"
+					"IsPurgable" 	"1"
+					"Duration"		"%duration"
+
+					"OnCreated"
+					{	
+						"AttachEffect"
+						{
+							"Target" 			"TARGET"
+							"EffectName"		"particles/generic_gameplay/generic_sleep.vpcf"
+							"EffectAttachType" 	"follow_overhead"
+							"EffectRadius"		"200"
+						}
+					}
+					//TARGET is not a recognized target name in Sleep.
+					"OnTakeDamage"
+					{
+						"RemoveModifier"
+						{
+							"Target" 		"UNIT"
+							"ModifierName" 	"my_sleep"
+						}
+					}
+
+					"States"
+					{
+						"MODIFIER_STATE_SILENCED" 					"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_DISARMED" 					"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_ROOTED" 					"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_EVADE_DISABLED" 			"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_COMMAND_RESTRICTED" 		"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+						
+			}
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"10"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"				"325"	
+				}
+
+			}
+
+		}
+
+		//=================================================================================================================
+		//Chain Lightning, taken from Dotacraft and modified to be an item of lvl 2
+		//=================================================================================================================
+		"item_chain_lightning"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9211"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+			"AbilityTextureName"			"item_maelstrom"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"700"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"5.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"120"
+			"ItemCost"						"250"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"lightning_damage"		"125"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"lightning_bounces"		"6"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bounce_range"			"500"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"lightning_decay"		"20"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"time_between_bounces"	"0.2"
+				}
+
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"250"
+				}
+			}
+
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items\custom_items.lua"
+					"Function"		"ChainLightning"
+				}
+			}
+		}
+
+		//=================================================================================================================
+		//Death Coil, taken from Dotacraft and modified to be an item of lvl 2
+		//=================================================================================================================
+		"item_death_coil"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9212"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+			"AbilityTextureName"			"item_orchid"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"700"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"5.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"75"
+			"ItemCost"						"250"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "5"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"projectile_speed"		"1100"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"target_damage"			"200"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"heal_amount"			"400"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"250"
+				}
+			}
+		
+			"OnAbilityPhaseStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"DeathCoilPrecast"
+				}
+			}
+		
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"TrackingProjectile"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+					"Dodgeable"			"1"
+					"ProvidesVision"	"0"
+					"MoveSpeed"			"%projectile_speed"
+					"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				}
+
+				"FireSound"
+				{
+					"Target"		"CASTER"
+					"EffectName"	"Hero_Abaddon.DeathCoil.Cast"
+				}
+			}
+
+			"OnProjectileHitUnit"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"custom_items/custom_items.lua"
+					"Function"		"DeathCoil"
+				}
+
+				"FireSound"
+				{
+					"Target"		"CASTER"
+					"EffectName"	"Hero_Abaddon.DeathCoil.Target"
+				}
+			}
+			
+		}
+
+		//=================================================================================================================
+		//Fire Bolt
+		//=================================================================================================================
+		"item_fire_bolt"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9213"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+			"AbilityTextureName"			"item_dagon"
+
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"700"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"8.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"75"
+			"ItemCost"						"350"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "3"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bolt_speed"			"750"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"stun_hero_duration"	"2.0"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"100.0"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"vision_radius"			"225"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"350"
+				}
+			}
+
+			"precache"
+			{
+				"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+				"particle"			"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+				"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+				"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+			}
+
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+				"TrackingProjectile"
+				{
+					"Target"           	"TARGET"
+				    "EffectName"       	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+				    "Dodgeable"        	"1"
+				    "ProvidesVision"   	"1"
+				    "VisionRadius"		"%vision_radius"
+				    "MoveSpeed"        	"%bolt_speed"
+				    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				}
+
+				"FireSound"
+				{
+					"EffectName"		"Hero_Lina.DragonSlave"
+					"Target"			"CASTER"
+				}
+			}
+
+			"OnProjectileHitUnit"
+			{
+				"FireSound"
+				{
+					"EffectName"		"Hero_Lina.ProjectileImpact"
+					"Target"			"TARGET"
+				}
+
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_lina/lina_spell_laguna_blade_impact_fire.vpcf"
+					"EffectAttachType"	"attach_origin"
+					"Target"			"TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"	"attach_origin"
+						"TARGET"	"attach_origin"
+						"TARGET"	"attach_origin"
+						"TARGET"	"attach_origin"	//CP3 has a child explosion origin
+					}
+				}
+
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_fire_bolt"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
+					"Duration"		"%stun_hero_duration"
+				}
+
+			}
+
+			"Modifiers"
+			{
+				"modifier_fire_bolt"
+				{
+					"IsDebuff"		"1"
+					"Duration"		"%stun_hero_duration"
+					"OverrideAnimation"	"ACT_DOTA_DISABLED"
+
+					"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+					"EffectAttachType"	"follow_overhead"
+
+					"States"
+					{
+						"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
+		}
+
+		//=================================================================================================================
+		//War Stomp, taken from Dotacraft and made in to a level 2 item
+		//=================================================================================================================
+		"item_war_stomp"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9214"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType" 		"DAMAGE_TYPE_MAGICAL"
+			"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+			"AbilityTextureName"			"item_winter_greevil_garbage"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"300"
+			"AbilityCastPoint"				"0.3"
+			"AbilityCooldown"				"6.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"90"
+			"ItemCost"						"325"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "4"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+
+			"AbilityDamage" 				"50"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"300"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"stun_hero_duration"	"3.0"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"stun_creep_duration"	"4.0"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"				 	"325"
+				}
+			}
+
+			"OnSpellStart"
+			{
+				"SpendCharge" 
+				{}
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
+					"EffectAttachType" 	"follow_origin"
+					"EffectRadius"		"%radius"
+					"Target" 			"CASTER"
+					"ControlPoints"
+					{
+						"01"	"%radius 0 %radius"
+					}
+				}
+
+				"FireSound"
+				{
+					"EffectName"		"Hero_Centaur.HoofStomp"
+					"Target" 			"CASTER"
+				}
+
+				"Damage"
+				{
+					"Target"		 "TARGET"
+					"Type"			 "DAMAGE_TYPE_MAGICAL"
+					"Damage"		 "%AbilityDamage"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"    "modifier_war_stomp"
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
+					"Duration"		"%stun_hero_duration"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"    "modifier_war_stomp"
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_BASIC"
+					}
+					"Duration"		"%stun_creep_duration"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_war_stomp"
+				{
+					"IsDebuff"	"1"
+					"States"
+					{
+						"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
+					}
+					"OverrideAnimation"	"ACT_DOTA_DISABLED"
+					"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+					"EffectAttachType"	"follow_overhead"
+				}
+			}
+		}
+
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// Purchasable Items
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		"item_boots_datadriven"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9300"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/boots_of_speed.mdl"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_boots"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"200"
+			"ItemShopTags"					"move_speed"
+			"ItemQuality"					"common"
+			"ItemAliases"					"boots of speed"
+			"SideShop"						"1"
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_movement_speed"			"60"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"200"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_boots_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+					}
+				}
+			}
+		}
+
+		"item_cpt_america_mask"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9301"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_bracer"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"350"
+			"ItemShopTags"					"agi;str"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+				
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"		"10"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_agility"			"10"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"350"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_bracer_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+						"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
+					}
+				}
+			}
+		}
+
+		"item_gem_of_health"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9302"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_vitality_booster"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"600"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+				
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"		"6"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_health"			"900"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"600"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_gemofhealth_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+						"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+					}
+				}
+			}
+		}
+
+		"item_gloves_of_the_gods"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9303"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_gloves_of_haste"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"900"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+				
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_attack"			"45"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_attack_speed"	"55"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"900"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_gemofhealth_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"			"%bonus_attack"
+						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					}
+				}
+			}
+		}
+
+		"item_legion_doom_horn"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9304"  //Valve's version of this item uses the ID "94".
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_headdress"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"400"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_move_speed_percent"		"20"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"aura_radius"				"750"
+				}
+				"03"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"aura_health_regen"			"2"
+				}
+				"04"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"cost"						"400"
+				}
+			}
+			
+			"Modifiers"
+			{
+
+				"modifier_item_legiondoomhorn_datadriven_aura_emitter"
+				{
+					"Passive"				"1"
+					"IsHidden"				"1"
+					
+					"Aura" 					"modifier_item_legiondoomhorn_datadriven_aura"
+					"Aura_Radius" 			"%aura_radius"
+					"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					"Aura_ApplyToCaster" 	"1"
+				}
+				"modifier_item_legiondoomhorn_datadriven_aura"
+				{
+					"Passive"			"0"
+					"IsHidden"			"0"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"				"%aura_health_regen"
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"%aura_move_speed_percent"
+					}
+				}
+			}
+		}
+
+		"item_mask_of_death"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9305"  //Valve's version of this item uses the ID "26".
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_lifesteal"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"650"
+			"ItemShopTags"					"unique"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"lifesteal_percent"		"20"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"650"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_lifesteal_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Orb"
+					{
+						"Priority"		"DOTA_ORB_PRIORITY_ITEM"
+					}
+
+					"OnOrbImpact"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"custom_items/custom_items.lua"
+							"Function"				"modifier_item_lifesteal_datadriven_on_orb_impact"
+						}
+					}
+				}
+				"modifier_item_lifesteal_datadriven_lifesteal"
+				{
+					"Passive"			"0"
+					"IsHidden"			"1"
+					
+					"OnDealDamage"
+					{
+						"Lifesteal"
+						{
+							"Target"			"ATTACKER"
+							"LifestealPercent"	"%lifesteal_percent"
+						}
+					}
+				}
+			}
+		}
+
+		"item_orb_of_frost"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9306"  //Valve's version of this item uses the ID "160".
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_winter_snowball"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1200"
+			"ItemShopTags"					"unique"
+			"ItemQuality"					"commmon"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+			"SideShop"						"1"
+
+				
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cold_movement_speed"	"-35"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cold_attack_speed"		"-45"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"cold_duration"			"3.0"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"1200"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_magic_damage"	"6"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_skadi_datadriven"
+				{
+					"Passive"				"1"
+					"IsHidden"				"1"
+					
+					"Orb"
+					{
+						"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+						"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+						"ProjectileName"		"particles/items2_fx/skadi_projectile.vpcf"
+						"CastAttack"			"0"
+					}
+
+					"OnOrbImpact"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"custom_items/custom_items.lua"
+							"Function"				"modifier_item_skadi_datadriven_on_orb_impact"
+							"ColdDuration"			"%cold_duration"
+						}
+						"Damage"
+						{
+							"Target" 				"TARGET"
+							"Type"					"DAMAGE_TYPE_MAGICAL"
+							"Damage"				"%bonus_magic_damage"
+						}
+					}
+				}
+				"modifier_item_skadi_datadriven_cold_attack"
+				{
+					"Passive"				"0"
+					"IsHidden"				"0"
+					
+					"StatusEffectName"     "particles/status_fx/status_effect_frost.vpcf"
+					"StatusEffectPriority" "10"
+						
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"			"%cold_attack_speed"
+						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cold_movement_speed"
+					}
+				}
+			}
+		}
+
+		"item_hw_gem_of_true_sight"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9307"  //Valve's version of this item uses the ID "26".
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_gem_of_true_sight"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"450"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+			"AbilitySpecial"
+			{
+
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"450"
+				}
+			}
+			"OnEquip"
+			{
+				"ApplyModifier"
+				{
+					"Target" 			"CASTER"
+					"ModifierName"		"modifier_item_gem_of_true_sight"
+				}
+			}
+		}
+
+		"item_hw_ring_of_protection"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9308"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_ring_of_protection"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"125"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_armor"			"5"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"125"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_ringofprot_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					}
+				}
+			}
+		}
+
+		"item_hw_ring_of_regen"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9309"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_ring_of_regen"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"300"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_health_regen"	"2"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"300"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_ringofregen_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					}
+				}
+			}
+		}
+
+		"item_hw_sobi_mask"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9310"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Model"							"models/props_gameplay/red_box.vmdl" 
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"AbilityTextureName"			"item_sobi_mask"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"400"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_mana_regen"		"50"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"400"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_item_sobimask_datadriven"
+				{
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen"
+					}
+				}
+			}
+		}
+
+
+		"item_talisman_of_evolution"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9311"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"AbilityTextureName"			"item_blade_mail"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"600"
+			"ItemQuality"					"common"
+			"SideShop"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"bonus_evasion"				"15"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"cost"						"600"
+				}
+			}
+
+			"precache"
+			{
+				"particle"	"particles/units/heroes/hero_centaur/centaur_return.vpcf"
+			}
+
+			"Modifiers"
+			{
+				"modifier_thorns"
+				{
+					"Passive"	"1"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+					}
+					"OnTakeDamage"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"custom_items/custom_items.lua"
+							"Function"		"Thorns"
+							"DamageTaken"	"%attack_damage"
+						}
+					}	
+				}
+			}
+		}
+
+		//=================================================================================================================
+		//Healing Wards... applies an aura that give 2 percent health regen and lasts 30s
+		//=================================================================================================================
+		"item_healing_wards"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"9312"									
+			"BaseClass" 					"item_datadriven"
+			"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+			"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY" 
+			"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"			"item_ward_observer"
+
+			"Model"							"models/props_winter/present.vmdl"
+			//what is this first effect for - effect if it's dropped?
+			"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"700"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCooldown"				"5.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"0"
+			"ItemCost"						"150"
+			"ItemPermanent"					"0"
+			"ItemKillable"                  "1"
+			"ItemSellable"                  "1"
+			"ItemDroppable"                 "1"
+			"ItemInitialCharges"            "3"
+			
+			"ItemQuality"					"rare"
+			
+			"SideShop"						"1"
+			"SecretShop" 					"0"
+						
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"400"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"30.0"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"healing_percent"		"2"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cost"					"150"
+				}
+			}
+
+			"OnSpellStart"
+			{
+				"SpendCharge"
+				{}
+
+				"SpawnUnit"
+				{
+					"UnitName"		"npc_dota_healing_ward"
+					"Target" 		"POINT"
+					"Duration"		"%duration"
+					"UnitCount"		"1"
+					//"OnSpawn"
+					//{
+					//	"ApplyModifier"
+					//	{
+					//		"ModifierName"	"modifier_item_healing_ward_aura_emitter"
+					//		"Target" 		"POINT"
+					//	}
+					//}
+				}
+				
+				"FireSound"
+				{
+					"EffectName"	"Hero_WitchDoctor.Voodoo_Restoration"
+					"Target"		"CASTER"
+				}
+			}
+
+			//apply an ability to the "spawned unit aka the healing ward that heals everyone do it that way"
+		}
+
+
+	
+
+
+	
+
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// Built In Examples
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		//=================================================================================================================
+		// Recipe: Arcane Boots
+		//=================================================================================================================
+		"item_recipe_arcane_boots2"
+		{
+			"ID"							"1005"
+
+			"BaseClass"						"item_recipe_arcane_boots"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_arcane_boots2"
+			"ItemRequirements"
+			{
+				"01"						"item_energy_booster;item_arcane_boots"
+			}
+		}
+		
+		//=================================================================================================================
+		// Arcane Boots II
+		//=================================================================================================================
+		"item_arcane_boots2"
+		{
+			"ID"							"1006"
+
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"BaseClass"						"item_arcane_boots"
+
+			// Stats		
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"55.0"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"25"
+			"ItemCost"						"2450"
+			"ItemShopTags"					"move_speed;boost_mana;mana_pool"
+			"ItemQuality"					"rare"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"ItemDisassembleRule"			"0"
+			"ItemAlertable"					"1"
+			"ItemAliases"					"mana;mb"
+			
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_movement"		"75"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_mana"			"500"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"replenish_radius"		"600"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"replenish_amount"		"250"
+				}
+			}
+		}
+}

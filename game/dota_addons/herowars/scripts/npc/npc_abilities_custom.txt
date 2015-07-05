@@ -1,0 +1,2432 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+//=================================================================================================================
+// *** DEBUG / EXAMPLE ABILITIES ***
+//=================================================================================================================
+
+	//=================================================================================================================
+	// Templar Assassin: Refraction Holdout
+	//=================================================================================================================
+	"templar_assassin_refraction_holdout"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17.0 17.0 17.0 17.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_absorb"				"200 300 400 500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"20 40 60 80"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"17.0 17.0 17.0 17.0"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// debug_echo
+	//=================================================================================================================
+	"debug_echo"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"axe_berserkers_call"
+        //"Ability Cast Range" "0"
+        //"Ability Cast Point" "0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" "0"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown" "0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost" "0"
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"debugEcho"
+			}
+		}
+        // When we start the spell (ie, after we have clicked the location we want)
+        "OnSpellStart"
+        {
+            // We want to run a lua script
+            "RunScript"
+            {
+                // The script file we call
+                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+                // The specific function we want
+                "Function"			"debugEcho2"
+            }       
+        }
+    }
+
+
+    //=================================================================================================================
+	// debugGold - testing adding/removing gold from the hero that presses the button
+	//=================================================================================================================
+	"debug_gold"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"alchemist_goblins_greed"
+        //"Ability Cast Range" "0"
+        //"Ability Cast Point" "0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint" "0"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown" "0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost" "0"
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		// When we start the spell (ie, after we have clicked the location we want)
+        "OnSpellStart"
+        {
+            // We want to run a lua script
+            "RunScript"
+            {
+                // The script file we call
+                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+                // The specific function we want
+                "Function"			"debugGold"
+                //Can I pass in whatever? - see http://pastie.org/9472049
+                //Yes, anything can be passed in and the script will contain these k,v pairs
+                "GoldCost"			"250"
+            }       
+        }
+    }
+
+
+//=================================================================================================================
+// Train Units
+//=================================================================================================================
+
+    //=================================================================================================================
+	// Train a Unit (peon/master peon) - this can be copied and pasted - change the name (train_peon) to w/e and the unit name and the cost to train different units
+	//=================================================================================================================
+	"train_peon"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"earthshaker_enchant_totem"
+        "AbilityCooldown"				"1"
+        "AbilityChannelTime"			"6.0"
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"levelone_cost" "100"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"leveltwo_cost"		"200"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_unit_peon"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_unit_peon"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"TrainUnit"
+				"UnitName"			"npc_dota_unit_peon"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"FoodCost"			"%foodcost"
+			}
+		}
+    }
+
+
+	//=================================================================================================================
+	// Train a Mortar Team
+	//=================================================================================================================
+	"train_mortar_team"
+	{				
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"tiny_toss"
+		"AbilityCooldown"				"1"
+		"AbilityChannelTime"			"2.0"
+
+
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"levelone_cost" "250"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"leveltwo_cost"		"350" 
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "0"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"2"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"woodcost"		"30"
+			}
+
+		}
+
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_unit_mortar_team"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_unit_mortar_team"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"TrainUnit"
+				"UnitName"			"npc_dota_unit_mortar_team"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Train a Superior Archer
+	//=================================================================================================================
+	"train_sup_archer"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"drow_ranger_marksmanship"
+        "AbilityCooldown"				"1"
+        "AbilityChannelTime"			"2.0"
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "300"
+			}
+
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "0"
+			}
+
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"		"2"
+			}
+
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_unit_sup_archer"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_unit_sup_archer"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"TrainUnit"
+				"UnitName"			"npc_dota_unit_sup_archer"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Train a Priest
+	//=================================================================================================================
+	"train_priest"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"omniknight_repel"
+        "AbilityCooldown"				"1"
+        "AbilityChannelTime"			"2.0"
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "150"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_unit_priest"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_unit_priest"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"TrainUnit"
+				"UnitName"			"npc_dota_unit_priest"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Train a Mech Warrior
+	//=================================================================================================================
+	"train_mech"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"tinker_march_of_the_machines"
+        "AbilityCooldown"				"1"
+        "AbilityChannelTime"			"2.0"
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "125"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_unit_mech_warrior"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_unit_mech_warrior"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"TrainUnit"
+				"UnitName"			"npc_dota_unit_mech_warrior"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+			}
+		}
+	
+	}
+
+//=================================================================================================================
+// *** BUILD TOWERS ***
+//=================================================================================================================
+
+
+
+	//=================================================================================================================
+	// Build a Watch Tower Lvl 1
+	//=================================================================================================================
+    "build_watch_tower_lvlone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"windrunner_powershot"
+		"MaxLevel"						"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"120"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"12.0"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "75"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "1"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "0"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"12"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_watch_tower_lvlone"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_watch_tower_lvlone"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_watch_tower_lvlone"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build a Watch Tower Lvl 4
+	//=================================================================================================================
+    "build_watch_tower_lvlfour"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"windrunner_focusfire"
+		"MaxLevel"						"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"120"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"12.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "200"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "1"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "0"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"12"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_watch_tower_lvlfour"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_watch_tower_lvlfour"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+		
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_watch_tower_lvlfour"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build Cannon Tower Lvl 4
+	//=================================================================================================================
+	"build_cannonlvlfour_tower"
+	{				
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"invoker_chaos_meteor"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"15.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "300"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "1"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "0"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"15"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_cannon_tower_lvlfour"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_cannon_tower_lvlfour"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_cannon_tower_lvlfour"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build an Anti-Invis Tower
+	//=================================================================================================================
+	"build_anti_invis_tower"
+	{				
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"disruptor_glimpse"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"20.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "300"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "2"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "100"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"20"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_anti_invis"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_anti_invis"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_anti_invis"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build a Snow Cone Maker
+	//=================================================================================================================
+	"build_snowcone_tower"
+	{				
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"crystal_maiden_freezing_field"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"25.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "300"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "2"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "100"
+			}
+
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_snowcone_maker"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_snowcone_maker"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_snowcone_maker"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build The Slower
+	//=================================================================================================================
+	"build_theslower_tower"
+	{				
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"ghost_frost_attack"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"20.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "375"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "3"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "300"
+			}
+
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"20"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_slower"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_slower"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_slower"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build The Destroyer
+	//=================================================================================================================
+	"build_thedestroyer_tower"
+	{				
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"chaos_knight_chaos_bolt"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"20.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "375"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "3"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "350"
+			}
+
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"20"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_destroyer"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_destroyer"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_destroyer"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build Long Ranged Tower
+	//=================================================================================================================
+	"build_longrange_tower"
+	{				
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"drow_ranger_marksmanship"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"25.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "350"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "2"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "250"
+			}
+
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_longrange"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_longrange"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_longrange"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Build Advanced Long Ranged Tower
+	//=================================================================================================================
+	"build_advlongrange_tower"
+	{
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		//"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"silencer_glaives_of_wisdom"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"25.0"
+		"MaxLevel"						"1"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "350"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "2"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "250"
+			}
+
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_tower_advlongrange"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_tower_advlongrange"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"getBuildingPoint"
+				"BuildingName"		"npc_dota_tower_advlongrange"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+	}
+
+//=================================================================================================================
+// *** BANKS ***
+//=================================================================================================================
+	//=================================================================================================================
+	// Build a Bank
+	//=================================================================================================================
+    "build_bank"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"120"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"30.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"goldcost" "600"
+			}
+			
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "10"
+			}
+
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"woodcost" "0"
+			}
+
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"30"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"Target"			"POINT"
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_player_bank"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_player_bank"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+		
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"Target"				"POINT"
+				"ScriptFile"			"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"				"getBuildingPoint"
+				"BuildingName"			"npc_dota_player_bank"
+				"GoldCost"				"%goldcost"
+				"FoodCost"				"%foodcost"
+				"WoodCost"				"%woodcost"
+
+			}
+		}
+
+	}
+
+//=================================================================================================================
+// *** DISBAND ***
+//=================================================================================================================
+    //=================================================================================================================
+	// Disband a building
+	//=================================================================================================================
+	"disband_building"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"phantom_assassin_coup_de_grace"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityGoldCost" "200"
+		//fantastic way to do it... BUT IT DOESNT WORK... It trys to charge the caster, which is the building, which has no gold...
+
+
+        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+        //"AOERadius" "45"
+		
+		// When we start the spell (ie, after we have clicked the location we want)
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"disbandBuilding"
+				//Can I pass in whatever? - see http://pastie.org/9472049
+				//Yes, anything can be passed in and the script will contain these k,v pairs
+			}       
+		}
+	}
+
+//====================================================================================================================
+// Abilities for creep waves (upgrade, summon special waves)
+//====================================================================================================================
+
+    //=================================================================================================================
+	// Upgrade the creep wave
+	//=================================================================================================================
+	"upgrade_creep_wave"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        // These aren't important, but make testing a tad easier
+        "AbilityTextureName" 			"elder_titan_ancestral_spirit"
+        //"AbilitySharedWithTeammates"	"1"
+		"AbilityCooldown"				"105" //5 seconds for testing, 105 is real value
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"goldcost"		"1200" //will be much higher - 1200
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"foodcost" "0"
+			}
+		}
+
+		
+		// When we start the spell (ie, after we have clicked the location we want)
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"UpgradeCreepWave"
+				"GoldCost"			"%goldcost"
+				"FoodCost"			"%foodcost"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Summon Special Wave - Windigo/Windigo Brat/Hydralisk
+	//=================================================================================================================
+	"summon_wave_windigo"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        "AbilityTextureName" 			"life_stealer_infest"
+
+        "AbilityCooldown"				"0" //5 seconds for testing
+		"AbilityChannelTime"			"12 12 38" //24.5 is derived from taking the windigo (12) and the hydra (37) and taking the average since I cant adjust.
+
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"levelone_cost"		"600" //will be much higher
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"leveltwo_cost"		"750" //will be much higher
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"levelthree_cost"		"950" //will be much higher
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"summon_time"	"12"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hydra_summon_time"	"38"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"ConsumeResources"
+				"UnitName"			"npc_dota_wave_windigo"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"lvlthree_GoldCost"	"%levelthree_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"RefundResources"
+				"UnitName"			"npc_dota_wave_windigo"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"lvlthree_GoldCost"	"%levelthree_cost"
+				"FoodCost"			"%foodcost"
+				"WoodCost"			"%woodcost"
+
+			}
+		}
+
+		// When we start the spell (ie, after we have clicked the location we want)
+        "OnChannelSucceeded"
+        {
+            // We want to run a lua script
+            "RunScript"
+            {
+                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+                "Function"			"SpawnSpecialCreepWave"
+                "GoldCost"			"%levelone_cost"
+                "lvltwo_GoldCost"	"%leveltwo_cost"
+                "lvlthree_GoldCost"	"%levelthree_cost"
+                //The type (name) of the unit to summon
+                "UnitType"			"npc_dota_wave_windigo"
+            }
+        }
+    }
+
+    //=================================================================================================================
+	// Summon Special Wave - Archer Reinforcements 1/2/3
+	//=================================================================================================================
+	"summon_wave_archer_reinforcements"
+    {
+        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+        "BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+        "AbilityTextureName" 			"clinkz_strafe"
+
+        "AbilityCooldown"				"200" //5 seconds for testing
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"goldcost"		"175" //will be much higher
+			}
+		}
+
+		// When we start the spell (ie, after we have clicked the location we want)
+        "OnSpellStart"
+        {
+            // We want to run a lua script
+            "RunScript"
+            {
+                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+                "Function"			"SpawnSpecialCreepWave"
+                "GoldCost"			"%goldcost"
+                //The type (name) of the unit to summon
+                "UnitType"			"npc_dota_wave_archer_reinforcements_lvlone"
+            }
+        }
+    }
+
+
+//====================================================================================================================
+// My Custom Abilities
+//====================================================================================================================
+
+	//****************************************************************************************************************
+	// Fountain Regen Aura
+	//****************************************************************************************************************
+	"basedef_regen_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                                     "ability_datadriven"
+		"AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"                         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"precache"
+		{
+			"particle_folder"                           "particles/generic_gameplay"
+		}
+
+		"Modifiers"
+		{
+			"aura_regen"
+			{
+				"IsHidden"                              "1"
+				"Passive"                               "1"
+
+				"Aura"                                  "regeneration_aura"
+				"Aura_Radius"                  			"%radius"
+				"Aura_Teams"                   			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"                    		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"    				"0"
+			}
+
+			"regeneration_aura"
+			{
+				"IsHidden"                              "1"
+				"Properties"
+				{
+		
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"             "%health_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE" 		"%mana_regen"
+				}
+
+				"EffectName"                    "particles/generic_gameplay/radiant_fountain_regen.vpcf"
+			}
+
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                                      "FIELD_FLOAT"
+				"health_regen"                          "8.0"
+			}
+			"02"
+			{
+				"var_type"                                      "FIELD_FLOAT"
+				"mana_regen"                            "8.0"
+			}
+			"03"
+			{
+				"var_type"                                      "FIELD_INTEGER"
+				"radius"                                        "1400"
+			}
+		}
+	}
+
+
+//====================================================================================================================
+// Abilities for custom mobs
+// DO NOT NEED THIS UNLESS I WANT CUSTOM OR TO OVERRIDE
+//====================================================================================================================
+
+ 	//=================================================================================================================
+	// Harpy Storm: Chain Lightning
+	//=================================================================================================================
+	"harpy_storm_chain_lightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		  
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		//"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"4.0"
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_damage"		"140"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_range"			"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_percent_loss"	"25.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_targets"			"4"
+			}
+		}
+	}
+
+//====================================================================================================================
+// Data Driven Abilities - Completly custom abilities
+//====================================================================================================================
+
+
+
+	"orb_ability_example"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName" 		"ursa_earthshock"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
+	    "AbilityCastPoint"			"0.0"
+	    "AbilityCastRange"			"900"
+	    "AbilityCooldown"           "0"
+	    "AbilityManaCost"           "0"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"			"FIELD_INTEGER"
+	            "RangeDamage"       "75"
+	        }
+	    }
+	 
+	    "Modifiers"
+	    {
+	        "TestOrb_Modifier"
+	        {
+	            "Passive"     "1"
+	            //"IsHidden"    "1"
+
+	            "Orb"
+	            {
+	                "Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+	                "ProjectileName"    "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+	                "CastAttack"		"1"
+	            }
+
+	            "OnOrbImpact"
+	            {
+	                "FireEffect"
+	                {
+	                    "EffectName"            "particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
+	                    "EffectAttachType"      "attach_hitloc"
+	                    "Target"                "TARGET"
+	                }
+
+	                "Damage"
+	                {
+	                    "Type"			"DAMAGE_TYPE_PURE"
+	                    "Damage"		"%RangeDamage"
+	                    "Target"
+	                    {
+	                        "Center"    "TARGET"
+	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	                        "Type"      "DOTA_UNIT_TARGET_ALL"
+	                        "Radius"    "275"
+	                    }
+	                }
+	                "Stun"
+	                {
+	                    "Duration"      "2"
+	                    "Target"
+	                    {
+	                        "Center"    "TARGET"
+	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	                        "Type"      "DOTA_UNIT_TARGET_ALL"
+	                        "Radius"    "275"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+
+	//=================================================================================================================
+	// Catapult: Attack
+	//=================================================================================================================
+	"catapult_attack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"BaseClass"						"ability_datadriven"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		//"AbilityCastMinimumRange"		"500" // Not hooked up?  Added hook in vscript to check min range.
+		"AbilityCastPoint"				"0.7"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"1.0"
+
+		"precache"
+		{
+			"particlefile"				"particles/units/heroes/hero_batrider.pcf"
+			"particlefile"				"particles/econ/generic/generic_aoe_shockwave_1.pcf"
+			"soundfile"					"scripts/game_sounds/ability_catapult_attack.txt"
+		}
+		
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"EffectName"			"batrider_flamebreak"
+				"MoveSpeed"				"%speed"
+				"StartPosition"			"attach_attack1"
+				"StartRadius"			"%collision_radius"
+				"EndRadius"				"%collision_radius"
+				"TargetTeams"			"DOTA_UNIT_TARGET_TEAM_NONE"
+				"TargetTypes"			"DOTA_UNIT_TARGET_NONE"
+				"TargetFlags"			"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"		"0"
+				"ProvidesVision"		"1"
+				"VisionRadius"			"300"
+			}
+			"CreateThinker"
+			{
+				"ModifierName"			"target_effect_thinker"
+				"Target"				"POINT"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Attack"
+				"Target"				"CASTER"
+			}
+		}
+
+		"OnProjectileFinish"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Catapult.Impact"
+				"Target"				"POINT"
+			}
+			"Damage"
+			{
+				"Target"
+				{
+					"Center"			"PROJECTILE"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Radius"			"%explosion_radius"
+				}
+				"Type"					"DAMAGE_TYPE_MAGICAL"
+				"Damage"				"%damage"
+			}
+			"Knockback"
+			{
+				"Target"
+				{
+					"Center"			"PROJECTILE"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Radius"			"%explosion_radius"
+				}
+				"Center"				"PROJECTILE"
+				"Distance"				"%knockback_max_distance"
+				"IsFixedDistance"		"1"
+				"Height"				"%knockback_height"
+				"Duration"				"%knockback_duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"target_effect_thinker"
+			{
+				"Duration"				"3"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"generic_aoe_shockwave_1"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00"		"0 0 0"
+							"01"		"%explosion_radius 0 0"
+							"02"		"6 0 1"
+							"03"		"200 0 0"
+							"04"		"0 0 0"
+						}
+					}
+				}
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_radius"		"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"collision_radius"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_max_distance"	"400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.25"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mindistance"			"500"
+			}
+
+		}
+	}
+
+	//-------------------------------------------------------------------------------------------------------------
+	// BuildingHelper Dummy Unit
+    //-------------------------------------------------------------------------------------------------------------
+	"bh_dummy_unit"
+	  {
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+		"MaxLevel"                      "1"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"bh_dummy"
+			}
+		}
+		
+		"Modifiers"
+			{
+				"bh_dummy"
+				  {
+					  "Passive"                        "1"
+					  "IsHidden"                        "1"    
+					  "States"
+					  {
+						  "MODIFIER_STATE_UNSELECTABLE"	        "MODIFIER_STATE_VALUE_ENABLED"
+						  "MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+						  "MODIFIER_STATE_INVULNERABLE"         "MODIFIER_STATE_VALUE_ENABLED"
+						  "MODIFIER_STATE_NOT_ON_MINIMAP"       "MODIFIER_STATE_VALUE_ENABLED"
+					  }
+				  }
+			}
+	  }
+
+
+
+//====================================================================================================================
+// Abilities for Dummy Units
+//===================================================================================================================
+	"dummy_passive"
+	{
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+		{
+			"dummy_modifier"
+			{
+				"Passive"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"dummy_passive_vulnerable"
+	{
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+		{
+			"dummy_modifier"
+			{
+				"Passive"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"	
+				}
+			}
+		}
+	}
+	//-------------------------------------------------------------------------------------------------------------
+	// Healing Wards
+    //-------------------------------------------------------------------------------------------------------------
+	"healing_ward_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY" 
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healing_percent"			"2"
+			}
+		}
+
+
+
+		"Modifiers"
+		{
+
+			"modifier_item_healing_ward_aura_emitter"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura" 					"modifier_item_healing_ward_aura"
+				"Aura_Radius" 			"%radius"
+				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster" 	"1"
+			}
+
+			"modifier_item_healing_ward_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"				"%healing_percent"
+				}
+
+				"OnCreated"
+				{	
+					"AttachEffect"
+					{
+						"Target" 	"TARGET"
+						"EffectName"		"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_heal.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"EffectRadius"				"200"
+					}
+				}
+				//"ThinkInterval"	"15"
+				//"OnIntervalThink"
+				//{
+				//	"AttachEffect"
+				//	{
+				//		"Target" 			"CASTER"
+				//		"EffectName"		"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_heal.vpcf"
+				//		"EffectAttachType" 	"follow_origin"
+				//		"EffectRadius"				"200"
+				//	}
+				//}
+			}
+		}
+	}
+}
