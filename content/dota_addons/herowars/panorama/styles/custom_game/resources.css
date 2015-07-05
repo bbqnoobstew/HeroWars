@@ -1,27 +1,19 @@
-#myTestID
-{
-	background-color: lightgrey;
-    width: 300px;
-    padding: 25px;
-    border: 25px solid navy;
-    margin: 25px;
-    position: 350px 40px 0px;
-}
-
 /* The parent panel for the wood/food labels and the respective amounts
 	Add a background image and remove the border.
  */
 .ResourcePanel
 {
-	width: 100px;
-	height: 67px;
-	background-color: black;
-	border: 2px solid dimgray;
+	width: 104px;
+	height: 79px;
+	background-color: #111111EE; 
+	border: 4px solid #000;
 	horizontal-align: right;
-    vertical-align: bottom;
-	opacity: 0.8;
-    margin-bottom: 21.2%;
-}
+	vertical-align: bottom;
+	margin-bottom: 21.2%;
+	padding: 4px 0px 4px 4px;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 0 0 4px 3px black;
+} 
 
 /*
 The panel containing the text for the word "food"
@@ -40,12 +32,12 @@ The panel containing the text for the word "food"
 The food text itself, whether this be an icon of food or what
 I think i can delete this since i'm using an image now...
 */
-#FoodText,
+/*#FoodText,
 #WoodText
 {
 	font-size: 20;
 	color: white;
-}
+}*/
 
 /*
 The panel containing the text for the value of the players food

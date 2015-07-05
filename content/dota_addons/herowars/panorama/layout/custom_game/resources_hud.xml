@@ -10,13 +10,13 @@
   	<!--<Panel hittest="false" class="CustomHudRoot">-->
   		<Panel class = "ResourcePanel">
         <Panel id="FoodNamePanel" >
-          <Image id="FoodImage" src="file://{images}/custom_game/resource_icons/food_32.png" />
+          <Image id="FoodImage" src="file://{images}/custom_game/resource_icons/food_64.png" />
         </Panel>
         <Panel id="FoodValuePanel" >
          <Label id="FoodValueText" text="19" />
         </Panel>
         <Panel id="WoodNamePanel" >
-          <Image id="WoodImage" src="file://{images}/custom_game/resource_icons/wood_32.png" />
+          <Image id="WoodImage" src="file://{images}/custom_game/resource_icons/wood_64.png" />
         </Panel>
         <Panel id="WoodValuePanel" >
          <Label id="WoodValueText" text="5000" />
