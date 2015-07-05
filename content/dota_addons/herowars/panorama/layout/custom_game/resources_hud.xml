@@ -1,23 +1,22 @@
 <root>
     <styles>
-		<include src="file://{resources}/styles/custom_game/resources.css" />
+		    <include src="file://{resources}/styles/custom_game/resources.css" />
     </styles>
 
     <scripts>
         <include src="file://{resources}/scripts/custom_game/UpdateResources.js" />
-        
     </scripts>
 
   	<!--<Panel hittest="false" class="CustomHudRoot">-->
   		<Panel class = "ResourcePanel">
         <Panel id="FoodNamePanel" >
-  			 <Label id="FoodText" text="Food:" />
+          <Image id="FoodImage" src="file://{images}/custom_game/resource_icons/food_32.png" />
         </Panel>
         <Panel id="FoodValuePanel" >
          <Label id="FoodValueText" text="19" />
         </Panel>
         <Panel id="WoodNamePanel" >
-         <Label id="WoodText" text="Wood:" />
+          <Image id="WoodImage" src="file://{images}/custom_game/resource_icons/wood_32.png" />
         </Panel>
         <Panel id="WoodValuePanel" >
          <Label id="WoodValueText" text="5000" />

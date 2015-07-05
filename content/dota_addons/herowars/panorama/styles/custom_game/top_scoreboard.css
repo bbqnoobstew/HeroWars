@@ -2,7 +2,7 @@
 {
 	width: 1035px;
 	height: 42px;
-	border: 2px solid blue;
+	/*border: 2px solid blue;*/
 	horizontal-align: center;
 	vertical-align: top;
 }
@@ -11,7 +11,7 @@
 {
 	width: 80px;
 	height: 42px;
-	border: 2px solid white;
+	/*border: 2px solid white;*/
 	horizontal-align: left;
 }
 
@@ -29,7 +29,7 @@
 {
 	width: 80px;
 	height: 42px;
-	border: 2px solid red;
+	/*border: 2px solid red;*/
 	horizontal-align: right;
 }
 

@@ -11,7 +11,7 @@
 	<Panel>
 		<!-- Use the Valve-authored multi-team-compatible scoreboard, instead of the default Dota 2-team scoreboard. -->
 		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/top_team_scoreboard.xml" />
-
+		
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/resources_hud.xml" />
 
 	</Panel>

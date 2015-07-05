@@ -13,13 +13,13 @@
  */
 .ResourcePanel
 {
-	width: 128px;
-	height: 60px;
-
-	border: 2px solid white;
+	width: 100px;
+	height: 67px;
+	background-color: black;
+	border: 2px solid dimgray;
 	horizontal-align: right;
     vertical-align: bottom;
-
+	opacity: 0.8;
     margin-bottom: 21.2%;
 }
 
@@ -29,19 +29,21 @@ The panel containing the text for the word "food"
 #FoodNamePanel
 {
 	horizontal-align: left;
-	width: 62px;
-	height: 28px;
-	border: 2px solid navy;
+	vertical-align: top;
+	width: 32px;
+	height: 32px;
+	opacity: 1.0;
+	/*border: 2px solid navy;*/
 }
 
 /*
 The food text itself, whether this be an icon of food or what
+I think i can delete this since i'm using an image now...
 */
 #FoodText,
 #WoodText
 {
 	font-size: 20;
-	text-shadow: 2px 2px 8px 3.0 #333333b0;
 	color: white;
 }
 
@@ -52,8 +54,8 @@ The panel containing the text for the value of the players food
 {
 	horizontal-align: right;
 	width: 62px;
-	height: 28px;
-	border: 2px solid green;
+	height: 32px;
+	/*border: 2px solid green;*/
 }
 
 /*
@@ -63,10 +65,10 @@ The food value text itself, this is number from the players food amount
 #WoodValueText
 {
 	horizontal-align: center;
+	vertical-align: center;
 	text-align: right;
 	font-size: 20;
-	text-shadow: 2px 2px 8px 3.0 #333333b0;
-	color: blue;
+	color: white;
 }
 
 
@@ -77,9 +79,10 @@ The panel containing the text for the word "food"
 {
 	vertical-align: bottom;
 	horizontal-align: left;
-	width: 62px;
-	height: 28px;
-	border: 2px solid navy;
+	width: 32px;
+	height: 32px;
+	opacity: 1.0;
+	/*border: 2px solid navy;*/
 }
 
 /*
@@ -90,6 +93,6 @@ The panel containing the text for the value of the players food
 	vertical-align: bottom;
 	horizontal-align: right;
 	width: 62px;
-	height: 28px;
-	border: 2px solid green;
+	height: 32px;
+	/*border: 2px solid green;*/
 }

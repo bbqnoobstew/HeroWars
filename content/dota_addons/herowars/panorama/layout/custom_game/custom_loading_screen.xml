@@ -1,0 +1,10 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
+  </styles>
+  <Panel class="AddonLoadingRoot">
+    <Panel id="CustomBg" >
+      <Image id="HeroWarsLoadScreen" src="file://{images}/custom_game/loading_screen/herowars_loading_screen.png" />
+    </Panel>
+  </Panel>
+</root>
