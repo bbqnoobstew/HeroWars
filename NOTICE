@@ -1,7 +1,7 @@
-Copyright 2015 bbqnoobstew
-Licensed under GPLv2 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+Copyright 2015 bbqnoobstew Licensed under GPLv2 (https://www.gnu.org/licenses
+/old-licenses/gpl-2.0.en.html)
 
-This software includes software developed by
+This software includes software developed by:
 BMD (https://github.com/bmddota/barebones) (Apache License)
 Myll (https://github.com/Myll/Dota-2-Building-Helper) (GPLv3)
 
@@ -9,12 +9,18 @@ This software (possibly) includes partial code from the following sources:
 Pizzalol (https://github.com/Pizzalol/SpellLibrary)
 MNoya (https://github.com/MNoya/DotaCraft)
 
-They are licensed seperately and their respective licenses are included in LICENSE file in their unmodified versions (as they were found in the repositories).
+They are licensed seperately and their respective licenses are included in
+LICENSE file in their unmodified versions (as they were found in the
+repositories).
 
-The spirit of the copyright and license is to prevent Hero Wars from ever being monetized by any specific individual, should Valve ever choose do so with Custom Games in the future.
+The spirit of the copyright and license is to prevent Hero Wars from ever being
+monetized by any specific individual, should Valve ever choose do so with Custom
+Games in the future.
 
-Please create newer and better versions of Hero Wars from this version! Please credit bbqnoobstew as the creator of the Dota2 version and please credit the original authors listed below.
+Please create newer and better versions of Hero Wars from this version! Please
+credit bbqnoobstew as the creator of the Dota2 version and please credit the
+original authors listed below.
 
-This is a remake of a public domain Warcraft 3 Custom Map "Hero Wars"
-	Credit goes to Virgin-Flesh and Pay123 for the Warcraft 3 Custom Map
-	Credit goes to Jumpyg1258 as developer of original Hero Wars
+This is a remake of a public domain Warcraft 3 Custom Map "Hero Wars" 
+Credit goes to Virgin-Flesh and Pay123 for the Warcraft 3 Custom Map
+Credit goes to Jumpyg1258 as developer of original Hero Wars
