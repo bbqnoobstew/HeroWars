@@ -478,6 +478,13 @@ function HeroWarsGameMode:InitGameMode()
 	--set respawning to false so I can control it
 	GameRules:SetHeroRespawnEnabled( false )
 
+	--Set the custom game set up time (allow for picking teams)
+	--doesn't work...
+	--GameRules:SetCustomGameSetupTimeout( 60 ) -- set the custom game setup phase to last 60 seconds, set to 0 skip the custom game setup, or -1 to disable the timeout
+	
+	--Set the time before auto launch
+	GameRules:SetCustomGameSetupAutoLaunchDelay ( 42 )
+
 	--listen for the player to fully connect, then set up game rules inside OnPlayerLoaded
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(HeroWarsGameMode, 'onPlayerLoaded'), self)
 	--listen for the npc's to spawn - ultimately filtering out for heros to populate the hero data table
