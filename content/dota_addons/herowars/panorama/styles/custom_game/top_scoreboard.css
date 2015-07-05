@@ -1,0 +1,44 @@
+.TopScoreboard
+{
+	width: 1035px;
+	height: 42px;
+	border: 2px solid blue;
+	horizontal-align: center;
+	vertical-align: top;
+}
+
+#RadiantScorePanel
+{
+	width: 80px;
+	height: 42px;
+	border: 2px solid white;
+	horizontal-align: left;
+}
+
+#RadiantScore
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 24;
+	color: white;
+	font-weight: bold;
+}
+
+#DireScorePanel
+{
+	width: 80px;
+	height: 42px;
+	border: 2px solid red;
+	horizontal-align: right;
+}
+
+#DireScore
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 24;
+	color: white;
+	font-weight: bold;
+}

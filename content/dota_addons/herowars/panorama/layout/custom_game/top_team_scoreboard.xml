@@ -1,0 +1,18 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/top_scoreboard.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/UpdateTopScoreboard.js" />
+	</scripts>
+
+	<Panel class = "TopScoreboard">
+		<Panel id="RadiantScorePanel" >
+				<Label id="RadiantScore" text="00" />
+		</Panel>
+		<Panel id="DireScorePanel" >
+				<Label id="DireScore" text="00" />
+		</Panel>
+	</Panel>
+</root>
