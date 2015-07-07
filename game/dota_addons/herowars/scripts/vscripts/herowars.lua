@@ -927,7 +927,7 @@ function HeroWarsGameMode:CaptureGameMode()
 	if GameMode == nil then
 		GameMode = GameRules:GetGameModeEntity()
 		GameMode:SetRecommendedItemsDisabled( true )
-		GameMode:SetStashPurchasingDisabled( true )
+		GameMode:SetStashPurchasingDisabled( false )
 		--GameMode:SetFogOfWarDisabled( true )
 		GameMode:SetCameraDistanceOverride( 1404.0 ) --[[Returns:void
 		Set a different camera distance; dota default is 1134.
