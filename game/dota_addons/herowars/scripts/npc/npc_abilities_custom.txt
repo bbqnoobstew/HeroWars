@@ -747,7 +747,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_watch_tower_lvlone"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -842,7 +842,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_watch_tower_lvlfour"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -938,7 +938,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_cannon_tower_lvlfour"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1035,7 +1035,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_anti_invis"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1133,7 +1133,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_snowcone_maker"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1231,7 +1231,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_slower"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1329,7 +1329,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_destroyer"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1427,7 +1427,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_longrange"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1525,7 +1525,7 @@
 			{
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"			"getBuildingPoint"
+				"Function"			"AddBuildingToPlayer"
 				"BuildingName"		"npc_dota_tower_advlongrange"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
@@ -1625,7 +1625,7 @@
 			{
 				"Target"				"POINT"
 				"ScriptFile"			"scripts/vscripts/custom_abilities/custom_abilities.lua"
-				"Function"				"getBuildingPoint"
+				"Function"				"AddBuildingToPlayer"
 				"BuildingName"			"npc_dota_player_bank"
 				"GoldCost"				"%goldcost"
 				"FoodCost"				"%foodcost"

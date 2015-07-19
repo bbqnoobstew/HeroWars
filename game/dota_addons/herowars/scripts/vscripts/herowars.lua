@@ -498,6 +498,9 @@ function HeroWarsGameMode:InitGameMode()
 	--~ ListenToGameEvent( "dota_match_done", Dynamic_Wrap( HeroWarsGameMode, 'OnMatchDone' ), self )
 	--~ ListenToGameEvent( "dota_holdout_revive_complete", Dynamic_Wrap( HeroWarsGameMode, 'OnHoldoutReviveComplete' ), self )
 
+	--attempting to create my own modifier to stun. For use with towers and duels.
+    LinkLuaModifier( "modifier_stun_lua", LUA_MODIFIER_MOTION_NONE )
+
 	print "[HWDEBUG]: Starting first think"
 	Entities:First():SetContextThink("HWThink", HeroWarsGameMode.Think, 0.25)
 end

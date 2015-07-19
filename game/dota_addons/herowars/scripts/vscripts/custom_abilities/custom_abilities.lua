@@ -488,6 +488,14 @@ function TrainUnit(keys)
 end
 
 function AddBuildingPoint(keys)
+--@params
+--keys.UnitName - the name of the building to be built
+--keys.caster:GetOwner - the owner so we can assign the build to their ownership
+--keys.caster:GetPlayerID - the playerID so we can set the tower controllable by the player
+--keys.ability:GetChannelTime()*.65 - this is the building helper build time of the building, the channel time scaled by a constant
+--Returns
+--false if we can't build there
+--true if the building was successfully placed
 	buildingPoint = BuildingHelper:AddBuildingToGrid(keys.target_points[1], 2, keys.caster) --2.34 is based on 150x150
 	if buildingPoint == -1 then
 		return false
@@ -502,12 +510,16 @@ function AddBuildingPoint(keys)
 		farm:UpdateHealth(buildTime, true, 1.0)
 		farm:SetControllableByPlayer(ownerPlayerID, true)
 		farm:RemoveModifierByName("modifier_invulnerable")
+		--print("Attempting to add 'modifier_stun_lua' to the tower to stop it from firing before it's done being built")
+		--print("Modifiers BEFORE adding stun modifier: " .. farm:GetModifierCount())
+		farm:AddNewModifier(farm, nil, "modifier_stun_lua", {duration = -1})
+		--print("Modifiers AFTER adding stun modifier: " .. farm:GetModifierCount())
 		return true
 	end
 end
 
 --rename to AddBuilding(keys)
-function getBuildingPoint(keys)
+function AddBuildingToPlayer(keys)
 --@params
 --keys.BuildingName - The name of the unit to be trained
 --Called by OnChannelSucceeded
@@ -516,6 +528,7 @@ function getBuildingPoint(keys)
 --Returns: nothing	
 
 	--build time for normal buildings set to 1s, build time for banks is changed below to 30s. This is the max that BuildingHelper will accept before scaling weird.
+	--TODO: Find out why this is here, it doesn't seem needed
 	BUILD_TIME=0.0
 
 	-- get the player owner
@@ -620,11 +633,19 @@ function getBuildingPoint(keys)
 		end
 	end
 
+	--Remove the stun that's put on buildings while they are being built
+	--print("Modifiers BEFORE removing stun modifier: " .. farm:GetModifierCount())
+	farm:RemoveModifierByName("modifier_stun_lua")
+	--print("Modifiers AFTER removing stun modifier: " .. farm:GetModifierCount())
+
+	--EXTRA CRUFT TO BE CLEANED UP BELOW
 	--ok set the owner in herowars.lua - now can I get the player from getting at the objects owner? We'll see in a few.
-	local ownerPlayerID = keys.caster:GetOwner():GetPlayerID() -- get the playerID from the owner
-	local ownerHero = keys.caster:GetOwner():GetAssignedHero() -- get the Hero from the owner (testing to see which handle it is)
+	--local ownerPlayerID = keys.caster:GetOwner():GetPlayerID() -- get the playerID from the owner
+	--local ownerHero = keys.caster:GetOwner():GetAssignedHero() -- get the Hero from the owner (testing to see which handle it is)
 	-- print("The owners PlayerID: " .. ownerPlayerID)
 	-- print("The owners assigned hero's gold (to test if GetAssigned Hero returns the  CDOTA_BaseNPC_Hero type: " .. ownerHero:GetGold())
+
+
 
 
 
