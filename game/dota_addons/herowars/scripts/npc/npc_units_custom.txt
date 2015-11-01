@@ -1382,7 +1382,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"basedef_regen_aura"			// Ability 1
-		"Ability2"					"reflex_dummy_unit"			// Ability 2
+		"Ability2"					"unselectable"			// Ability 2
 		"Ability3"					""	// Ability 3
 		"Ability4"					""						// Ability 4
 		"Ability5"					""						// Ability 5
@@ -1424,8 +1424,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"400"		// Range of vision during day light.
-		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 
 		// Bounds
 		//----------------------------------------------------------------
