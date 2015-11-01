@@ -289,7 +289,7 @@ direRoundFourSpawnCount = 0
 
 -- DEBUG --
 --set this to true to get more gold and shorter rounds
-debugMode = false
+debugMode = true
 
 if debugMode then 
 	ROUND_TIME = 60.0
@@ -930,7 +930,7 @@ function HeroWarsGameMode:CaptureGameMode()
 	if GameMode == nil then
 		GameMode = GameRules:GetGameModeEntity()
 		GameMode:SetRecommendedItemsDisabled( true )
-		GameMode:SetStashPurchasingDisabled( false )
+		GameMode:SetStashPurchasingDisabled( true )
 		--GameMode:SetFogOfWarDisabled( true )
 		GameMode:SetCameraDistanceOverride( 1404.0 ) --[[Returns:void
 		Set a different camera distance; dota default is 1134.

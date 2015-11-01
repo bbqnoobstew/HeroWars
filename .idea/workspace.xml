@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ef18dc96-4f0c-4af1-a30b-46f9b6d43ac4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua" afterPath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_items_custom.txt" afterPath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_items_custom.txt" />
+    </list>
+    <ignored path="HeroWars.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="HeroWars" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="herowars.lua" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5347222">
+              <caret line="932" column="29" selection-start-line="932" selection-start-column="0" selection-end-line="933" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#985#0" expanded="false" />
+                <element signature="e#988#1462#0" expanded="false" />
+                <element signature="e#1567#1590#0" expanded="false" />
+                <element signature="n#InDireRectA#0" expanded="false" />
+                <element signature="n#InDireRectB#0" expanded="false" />
+                <element signature="n#InRadiantRectA#0" expanded="false" />
+                <element signature="n#InRadiantRectB#0" expanded="false" />
+                <element signature="n#Set#0" expanded="false" />
+                <element signature="e#6457#6480#0" expanded="false" />
+                <element signature="e#16918#18102#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_SetInitialValues#0" expanded="false" />
+                <element signature="e#19179#19368#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:InitGameMode#0" expanded="false" />
+                <element signature="e#20504#20588#0" expanded="false" />
+                <element signature="e#20928#21018#0" expanded="false" />
+                <element signature="e#21456#21536#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_SetupCustomBuildings#0" expanded="false" />
+                <element signature="e#27707#27746#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:onPlayerLoaded#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:OnHeroInGame#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:OnNPCSpawned#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:OnEntityKilled#0" expanded="false" />
+                <element signature="e#30039#30149#0" expanded="false" />
+                <element signature="e#35478#35755#1" expanded="false" />
+                <element signature="e#35616#35751#0" expanded="false" />
+                <element signature="e#39216#39589#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:OnPlayerChat#0" expanded="false" />
+                <element signature="e#40159#40202#0" expanded="false" />
+                <element signature="e#40204#40233#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:PreGameSetup#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:EndGame#0" expanded="false" />
+                <element signature="e#41397#41430#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:Think#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_thinkState_Prep#0" expanded="false" />
+                <element signature="e#43407#43476#1" expanded="false" />
+                <element signature="e#43438#43473#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_thinkState_InRound#0" expanded="false" />
+                <element signature="e#44419#44527#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_thinkState_DuelPrep#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_thinkState_InDuel#0" expanded="false" />
+                <element signature="e#46159#46351#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_thinkState_postDuel#0" expanded="false" />
+                <element signature="e#46590#46748#0" expanded="false" />
+                <element signature="e#47137#47165#0" expanded="false" />
+                <element signature="e#47167#47196#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:StartRoundFour#0" expanded="false" />
+                <element signature="e#47313#47346#0" expanded="false" />
+                <element signature="e#47347#47369#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_startDuelTimer#0" expanded="false" />
+                <element signature="e#48018#48397#1" expanded="false" />
+                <element signature="e#48169#48393#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_startCreepWaveTimer#0" expanded="false" />
+                <element signature="e#48563#48815#1" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_startCreepWaveTimerRoundFour#0" expanded="false" />
+                <element signature="e#49259#49535#1" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_startCustomCreepWaveTimer#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_roundTimer#0" expanded="false" />
+                <element signature="e#49928#50802#0" expanded="false" />
+                <element signature="e#50304#50456#1" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_topScoreboardUpdateTimer#0" expanded="false" />
+                <element signature="e#50927#51018#1" expanded="false" />
+                <element signature="e#51026#51060#0" expanded="false" />
+                <element signature="e#51062#51092#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_echoGPK#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_echoRoundTwo#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_echoRoundThree#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_echoRoundFour#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_showRoundMessages#0" expanded="false" />
+                <element signature="e#54975#55009#0" expanded="false" />
+                <element signature="e#55010#55049#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_populatePlayerHeroData#0" expanded="false" />
+                <element signature="e#57379#57978#1" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_assignRadiantBuildingOwnership#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_assignDireBuildingOwnership#0" expanded="false" />
+                <element signature="e#59798#59950#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_calculateGPK#0" expanded="false" />
+                <element signature="e#61272#61302#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:SpawnRadiantUnits#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:SpawnDireUnits#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:SpawnRadiantUnitsRoundFour#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:SpawnDireUnitsRoundFour#0" expanded="false" />
+                <element signature="e#63659#63728#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:SpawnSpecialWaveUnits#0" expanded="false" />
+                <element signature="e#64059#64145#0" expanded="false" />
+                <element signature="e#66622#68400#1" expanded="false" />
+                <element signature="e#66772#68395#0" expanded="false" />
+                <element signature="e#67139#68307#1" expanded="false" />
+                <element signature="e#67310#68298#0" expanded="false" />
+                <element signature="e#71388#71412#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:UpgradeBrooders#0" expanded="false" />
+                <element signature="e#72944#72969#0" expanded="false" />
+                <element signature="n#entityIterator#0" expanded="false" />
+                <element signature="n#printTable#0" expanded="false" />
+                <element signature="e#73682#73901#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_debugPlayersInfo#0" expanded="false" />
+                <element signature="e#74763#74794#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_calculateTeamScores#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:UpdatePlayerFood#0" expanded="false" />
+                <element signature="e#75779#75812#1" expanded="false" />
+                <element signature="n#HeroWarsGameMode:UpdatePlayerWood#0" expanded="false" />
+                <element signature="e#76546#76579#1" expanded="false" />
+                <element signature="n#HeroWarsGameMode:UpdateTopScoreboard#0" expanded="false" />
+                <element signature="e#77035#77112#1" expanded="false" />
+                <element signature="e#77479#77505#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_HWConsoleScore#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_HWConsoleCommand#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_DebugConsoleCommand#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:DisplayBuildingGrids#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:__EntityConsoleCommand#0" expanded="false" />
+                <element signature="n#HeroWarsGameMode:_EntityIdentifying#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hero_wars_v085_beta_shops.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/shops/hero_wars_v085_beta_shops.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifier_stun_lua.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/modifier_stun_lua.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua" />
+        <option value="$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_items_custom.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dota_addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="herowars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dota_addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="herowars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vscripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dota_addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="herowars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HeroWars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dota_addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="herowars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="npc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef18dc96-4f0c-4af1-a30b-46f9b6d43ac4" name="Default" comment="" />
+      <created>1446402266678</created>
+      <option name="number" value="Default" />
+      <updated>1446402266678</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/modifier_stun_lua.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/shops/hero_wars_v085_beta_shops.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_items_custom.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6296296">
+          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5347222">
+          <caret line="932" column="29" selection-start-line="932" selection-start-column="0" selection-end-line="933" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#985#0" expanded="false" />
+            <element signature="e#988#1462#0" expanded="false" />
+            <element signature="e#1567#1590#0" expanded="false" />
+            <element signature="n#InDireRectA#0" expanded="false" />
+            <element signature="n#InDireRectB#0" expanded="false" />
+            <element signature="n#InRadiantRectA#0" expanded="false" />
+            <element signature="n#InRadiantRectB#0" expanded="false" />
+            <element signature="n#Set#0" expanded="false" />
+            <element signature="e#6457#6480#0" expanded="false" />
+            <element signature="e#16918#18102#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_SetInitialValues#0" expanded="false" />
+            <element signature="e#19179#19368#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:InitGameMode#0" expanded="false" />
+            <element signature="e#20504#20588#0" expanded="false" />
+            <element signature="e#20928#21018#0" expanded="false" />
+            <element signature="e#21456#21536#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_SetupCustomBuildings#0" expanded="false" />
+            <element signature="e#27707#27746#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:onPlayerLoaded#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:OnHeroInGame#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:OnNPCSpawned#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:OnEntityKilled#0" expanded="false" />
+            <element signature="e#30039#30149#0" expanded="false" />
+            <element signature="e#35478#35755#1" expanded="false" />
+            <element signature="e#35616#35751#0" expanded="false" />
+            <element signature="e#39216#39589#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:OnPlayerChat#0" expanded="false" />
+            <element signature="e#40159#40202#0" expanded="false" />
+            <element signature="e#40204#40233#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:PreGameSetup#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:EndGame#0" expanded="false" />
+            <element signature="e#41397#41430#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:Think#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_thinkState_Prep#0" expanded="false" />
+            <element signature="e#43407#43476#1" expanded="false" />
+            <element signature="e#43438#43473#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_thinkState_InRound#0" expanded="false" />
+            <element signature="e#44419#44527#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_thinkState_DuelPrep#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_thinkState_InDuel#0" expanded="false" />
+            <element signature="e#46159#46351#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_thinkState_postDuel#0" expanded="false" />
+            <element signature="e#46590#46748#0" expanded="false" />
+            <element signature="e#47137#47165#0" expanded="false" />
+            <element signature="e#47167#47196#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:StartRoundFour#0" expanded="false" />
+            <element signature="e#47313#47346#0" expanded="false" />
+            <element signature="e#47347#47369#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_startDuelTimer#0" expanded="false" />
+            <element signature="e#48018#48397#1" expanded="false" />
+            <element signature="e#48169#48393#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_startCreepWaveTimer#0" expanded="false" />
+            <element signature="e#48563#48815#1" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_startCreepWaveTimerRoundFour#0" expanded="false" />
+            <element signature="e#49259#49535#1" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_startCustomCreepWaveTimer#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_roundTimer#0" expanded="false" />
+            <element signature="e#49928#50802#0" expanded="false" />
+            <element signature="e#50304#50456#1" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_topScoreboardUpdateTimer#0" expanded="false" />
+            <element signature="e#50927#51018#1" expanded="false" />
+            <element signature="e#51026#51060#0" expanded="false" />
+            <element signature="e#51062#51092#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_echoGPK#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_echoRoundTwo#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_echoRoundThree#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_echoRoundFour#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_showRoundMessages#0" expanded="false" />
+            <element signature="e#54975#55009#0" expanded="false" />
+            <element signature="e#55010#55049#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_populatePlayerHeroData#0" expanded="false" />
+            <element signature="e#57379#57978#1" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_assignRadiantBuildingOwnership#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_assignDireBuildingOwnership#0" expanded="false" />
+            <element signature="e#59798#59950#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_calculateGPK#0" expanded="false" />
+            <element signature="e#61272#61302#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:SpawnRadiantUnits#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:SpawnDireUnits#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:SpawnRadiantUnitsRoundFour#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:SpawnDireUnitsRoundFour#0" expanded="false" />
+            <element signature="e#63659#63728#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:SpawnSpecialWaveUnits#0" expanded="false" />
+            <element signature="e#64059#64145#0" expanded="false" />
+            <element signature="e#66622#68400#1" expanded="false" />
+            <element signature="e#66772#68395#0" expanded="false" />
+            <element signature="e#67139#68307#1" expanded="false" />
+            <element signature="e#67310#68298#0" expanded="false" />
+            <element signature="e#71388#71412#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:UpgradeBrooders#0" expanded="false" />
+            <element signature="e#72944#72969#0" expanded="false" />
+            <element signature="n#entityIterator#0" expanded="false" />
+            <element signature="n#printTable#0" expanded="false" />
+            <element signature="e#73682#73901#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_debugPlayersInfo#0" expanded="false" />
+            <element signature="e#74763#74794#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_calculateTeamScores#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:UpdatePlayerFood#0" expanded="false" />
+            <element signature="e#75779#75812#1" expanded="false" />
+            <element signature="n#HeroWarsGameMode:UpdatePlayerWood#0" expanded="false" />
+            <element signature="e#76546#76579#1" expanded="false" />
+            <element signature="n#HeroWarsGameMode:UpdateTopScoreboard#0" expanded="false" />
+            <element signature="e#77035#77112#1" expanded="false" />
+            <element signature="e#77479#77505#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_HWConsoleScore#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_HWConsoleCommand#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_DebugConsoleCommand#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:DisplayBuildingGrids#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:__EntityConsoleCommand#0" expanded="false" />
+            <element signature="n#HeroWarsGameMode:_EntityIdentifying#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
