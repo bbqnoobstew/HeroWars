@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef18dc96-4f0c-4af1-a30b-46f9b6d43ac4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua" afterPath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_items_custom.txt" afterPath="$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_items_custom.txt" />
-    </list>
+    <list default="true" id="ef18dc96-4f0c-4af1-a30b-46f9b6d43ac4" name="Default" comment="" />
     <ignored path="HeroWars.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="herowars.lua" pinned="false" current-in-tab="true">
+      <file leaf-file-name="herowars.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5347222">
-              <caret line="932" column="29" selection-start-line="932" selection-start-column="0" selection-end-line="933" selection-end-column="0" />
+            <state vertical-scroll-proportion="-30.689655">
+              <caret line="1596" column="19" selection-start-line="1596" selection-start-column="14" selection-end-line="1596" selection-end-column="19" />
               <folding>
                 <element signature="e#0#985#0" expanded="false" />
                 <element signature="e#988#1462#0" expanded="false" />
@@ -59,11 +56,9 @@
                 <element signature="n#HeroWarsGameMode:OnPlayerChat#0" expanded="false" />
                 <element signature="e#40159#40202#0" expanded="false" />
                 <element signature="e#40204#40233#0" expanded="false" />
-                <element signature="n#HeroWarsGameMode:PreGameSetup#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:EndGame#0" expanded="false" />
                 <element signature="e#41397#41430#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:Think#0" expanded="false" />
-                <element signature="n#HeroWarsGameMode:_thinkState_Prep#0" expanded="false" />
                 <element signature="e#43407#43476#1" expanded="false" />
                 <element signature="e#43438#43473#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:_thinkState_InRound#0" expanded="false" />
@@ -95,7 +90,6 @@
                 <element signature="e#51062#51092#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:_echoGPK#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:_echoRoundTwo#0" expanded="false" />
-                <element signature="n#HeroWarsGameMode:_echoRoundThree#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:_echoRoundFour#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:_showRoundMessages#0" expanded="false" />
                 <element signature="e#54975#55009#0" expanded="false" />
@@ -112,7 +106,6 @@
                 <element signature="n#HeroWarsGameMode:SpawnRadiantUnitsRoundFour#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:SpawnDireUnitsRoundFour#0" expanded="false" />
                 <element signature="e#63659#63728#0" expanded="false" />
-                <element signature="n#HeroWarsGameMode:SpawnSpecialWaveUnits#0" expanded="false" />
                 <element signature="e#64059#64145#0" expanded="false" />
                 <element signature="e#66622#68400#1" expanded="false" />
                 <element signature="e#66772#68395#0" expanded="false" />
@@ -141,6 +134,16 @@
                 <element signature="n#HeroWarsGameMode:__EntityConsoleCommand#0" expanded="false" />
                 <element signature="n#HeroWarsGameMode:_EntityIdentifying#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="npc_abilities_custom.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_abilities_custom.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -423,8 +426,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/vscripts/herowars.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5347222">
-          <caret line="932" column="29" selection-start-line="932" selection-start-column="0" selection-end-line="933" selection-end-column="0" />
+        <state vertical-scroll-proportion="-30.689655">
+          <caret line="1596" column="19" selection-start-line="1596" selection-start-column="14" selection-end-line="1596" selection-end-column="19" />
           <folding>
             <element signature="e#0#985#0" expanded="false" />
             <element signature="e#988#1462#0" expanded="false" />
@@ -455,11 +458,9 @@
             <element signature="n#HeroWarsGameMode:OnPlayerChat#0" expanded="false" />
             <element signature="e#40159#40202#0" expanded="false" />
             <element signature="e#40204#40233#0" expanded="false" />
-            <element signature="n#HeroWarsGameMode:PreGameSetup#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:EndGame#0" expanded="false" />
             <element signature="e#41397#41430#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:Think#0" expanded="false" />
-            <element signature="n#HeroWarsGameMode:_thinkState_Prep#0" expanded="false" />
             <element signature="e#43407#43476#1" expanded="false" />
             <element signature="e#43438#43473#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:_thinkState_InRound#0" expanded="false" />
@@ -491,7 +492,6 @@
             <element signature="e#51062#51092#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:_echoGPK#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:_echoRoundTwo#0" expanded="false" />
-            <element signature="n#HeroWarsGameMode:_echoRoundThree#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:_echoRoundFour#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:_showRoundMessages#0" expanded="false" />
             <element signature="e#54975#55009#0" expanded="false" />
@@ -508,7 +508,6 @@
             <element signature="n#HeroWarsGameMode:SpawnRadiantUnitsRoundFour#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:SpawnDireUnitsRoundFour#0" expanded="false" />
             <element signature="e#63659#63728#0" expanded="false" />
-            <element signature="n#HeroWarsGameMode:SpawnSpecialWaveUnits#0" expanded="false" />
             <element signature="e#64059#64145#0" expanded="false" />
             <element signature="e#66622#68400#1" expanded="false" />
             <element signature="e#66772#68395#0" expanded="false" />
@@ -537,6 +536,14 @@
             <element signature="n#HeroWarsGameMode:__EntityConsoleCommand#0" expanded="false" />
             <element signature="n#HeroWarsGameMode:_EntityIdentifying#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/dota_addons/herowars/scripts/npc/npc_abilities_custom.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

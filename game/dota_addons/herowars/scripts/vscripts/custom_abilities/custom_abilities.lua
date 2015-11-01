@@ -857,10 +857,10 @@ function SpawnSpecialCreepWave(keys)
 	--print("Round Number = " .. HeroWarsGameMode.nRoundNumber)
 	--windigo/windigo brat/hydralisk all the same button
 	if unitType == "npc_dota_wave_windigo" then
-		if HeroWarsGameMode.nRoundNumber >= 2 and HeroWarsGameMode.nRoundNumber <= 3 then
+		if HeroWarsGameMode.nRoundNumber == 3 then
 			unitType = "npc_dota_wave_windigo_brat"
 			goldCost = keys.lvltwo_GoldCost
-		elseif HeroWarsGameMode.nRoundNumber > 3 then
+		elseif HeroWarsGameMode.nRoundNumber == 4 then
 			unitType = "npc_dota_wave_hydralisk"
 			goldCost = keys.lvlthree_GoldCost
 		end
