@@ -766,6 +766,7 @@ function UpgradeCreepWave(keys)
 	-- store the cost of the ability
 	local goldCost = keys.GoldCost --int
 	local foodCost = keys.FoodCost --int
+	local cooldown = keys.Cooldown --float
 	-- store the player gold for less typing
 	local playerGold = ownerHero:GetGold() --int
 
@@ -773,8 +774,25 @@ function UpgradeCreepWave(keys)
 	local team = keys.caster:GetTeam() -- int?
 
 	--print ("The team that is attempting to upgrade the creeps is: " .. team)
-
-
+	if team == 2 then
+		local prevEnt
+		for i=1, #RADIANT_ARMORIES do 
+			local buildingName = RADIANT_ARMORIES[i]
+			local buildingEnt = Entities:FindByName(prevEnt, buildingName)
+			local _ability = buildingEnt:GetAbilityByIndex(0)
+			_ability:StartCooldown(cooldown)
+		end
+	elseif team == 3 then
+		local prevEnt
+		for i=1, #DIRE_ARMORIES do 
+			local buildingName = DIRE_ARMORIES[i]
+			local buildingEnt = Entities:FindByName(prevEnt, buildingName)
+			local _ability = buildingEnt:GetAbilityByIndex(0)
+			_ability:StartCooldown(cooldown)
+		end
+	else
+		print ("HWERROR: WARNING: NO TEAM VALUE FOUND EXITING!")
+	end
 
 	if team == 2 then
 		--print ("RADIANT Creep Upgrade Attempt")
@@ -805,6 +823,7 @@ function UpgradeCreepWave(keys)
 		ownerHero:SpendGold(goldCost, 5) --works but the API is bugged. Says expects 3 params, but only needs 2 since player id was the first it expected.
 	else -- they dont have the money so just return?
 		print("HWERROR: Not enough gold!!")
+		keys.ability:EndCooldown()
 		return
 	end
 
@@ -875,6 +894,7 @@ function SpawnSpecialCreepWave(keys)
 	end
 
 	--We only need this check here now to deal with waves that dont require channel (archers and archer assassins)
+	--archer assasins need their own thing are they shared as a team?
 	if unitType == "npc_dota_wave_archer_reinforcements_lvlone" or unitType == "npc_dota_wave_archer_reinforcements_lvltwo" or unitType == "npc_dota_wave_archer_reinforcements_lvlthree" then
 		local _ability = keys.caster:GetAbilityByIndex(1)
 		-- could use keys.ability here as per IRC

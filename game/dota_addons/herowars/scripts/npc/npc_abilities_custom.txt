@@ -1709,8 +1709,13 @@
 			}
 			"02"
 			{
-				"var_type" "FIELD_INTEGER"
-				"foodcost" "0"
+				"var_type"		"FIELD_INTEGER"
+				"foodcost" 		"0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"cooldown"		"105.0"
 			}
 		}
 
@@ -1724,6 +1729,7 @@
 				"Function"			"UpgradeCreepWave"
 				"GoldCost"			"%goldcost"
 				"FoodCost"			"%foodcost"
+				"Cooldown"			"%cooldown"
 			}
 		}
 	}
