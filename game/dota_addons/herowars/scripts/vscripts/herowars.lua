@@ -576,24 +576,27 @@ function HeroWarsGameMode:_SetupCustomBuildings()
 		--local BHSize = x/64
 		local BHSize = 2
 		--changed the above to 2 from 2.5, 2015/02/07
+		-- ** Add Base Building Blockers so players can't build in base.
 		if BASE_BUILDING_BLOCKERS[buildingName] then
 			--print ("BASE_BUILDING_BLOCKERS found")
 			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, 40, nil) --2.34 is based on 150x150
 			if BH == -1 then
-				print ("HWDEBUG: Building Helper failed to add something to the grid. Check the next line.")
+				print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
 				print (unitName)
 			end
+		-- ** Add the farms so players can't build on top of them
 		elseif FARM_BUILDINGS[buildingName] then
 			--print ("FARM_BUILDINGS found")
 			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, 4, nil) --2.34 is based on 150x150
 			if BH == -1 then
-				print ("HWDEBUG: Building Helper failed to add something to the grid. Check the next line.")
+				print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
 				print (unitName)
 			end
 		else
+		-- ** Add the rest of the buildings, which are towers, to the grid
 			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, BHSize, nil) --2.34 is based on 150x150
 			if BH == -1 then
-				print ("HWDEBUG: Building Helper failed to add something to the grid. Check the next line.")
+				print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
 				print (unitName)
 			end
 		end
@@ -1991,7 +1994,7 @@ end
 
 function HeroWarsGameMode:_DebugConsoleCommand()
 
-	self:UpdateTopScoreboard()
+	--self:UpdateTopScoreboard()
 	--local nPlayerID = 0
 	--self:UpdatePlayerFood(nPlayerID)
 	--self:UpdatePlayerWood(nPlayerID)

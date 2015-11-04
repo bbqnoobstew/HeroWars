@@ -346,6 +346,10 @@ See GameMode:PostLoadPrecache() in barebones.lua for more information
 	PrecacheModel( "models/buildings/building_racks_ranged_reference.vmdl", context)
 
 	--[[
+		*** ITEMS ***		
+	]]
+	PrecacheModel( "models/props_winter/present.vmdl", context)
+	--[[
 		*** DUMMY UNITS ***
 	]]
 
