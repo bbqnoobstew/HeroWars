@@ -15,7 +15,7 @@ UsePathingMap = false
 AUTO_SET_HULL = true
 BHGlobalDummySet = false
 PACK_ENABLED = false
-BH_Z=512 --my z is 128 do I need to adjust? Dont think so... WAS 166, adjusted to 512 for debugging base blocking
+BH_Z=128 --my z is 128 do I need to adjust? Dont think so... WAS 166, adjusted to 512 for debugging base blocking
 FIRE_EFFECTS_ENABLED = true
 
 -- Circle packing math.
@@ -207,6 +207,7 @@ function BuildingHelper:AddBuildingToGrid(vPoint, nSize, hBuilder)
 		bottomBorderY = centerY-halfSide}
 		
 	if BuildingHelper:IsRectangularAreaBlocked(buildingRect) then
+		print("BUILDINGHELPER: Rectangular Area is Blocked!")
 		return -1
 	end
 	

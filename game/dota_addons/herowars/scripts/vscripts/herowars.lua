@@ -253,17 +253,103 @@ BUILDABLE_BUILDINGS = Set {"npc_dota_player_bank", "npc_dota_tower_watch_tower_l
 --units and buildings that refund food to the player if killed or disbanded. If updating, also update the table in self:_SetInitialValues
 FOOD_REFUND_UNITS = Set {"npc_dota_player_bank", "npc_dota_tower_watch_tower_lvlone", "npc_dota_tower_watch_tower_lvlfour", "npc_dota_tower_cannon_tower_lvlfour", "npc_dota_tower_anti_invis", "npc_dota_tower_snowcone_maker", "npc_dota_tower_destroyer", "npc_dota_tower_slower", "npc_dota_tower_longrange", "npc_dota_tower_advlongrange"}
 
---the following is used to add everything to BuildingHelpers grid
-ALL_LANE_BUILDINGS = {"tower_radiant_tp_watchtowerlvl2_1", "tower_radiant_tp_watchtowerlvl2_2", "tower_radiant_tp_cannonlvl2", "tower_dire_tp_watchtowerlvl2_1", "tower_dire_tp_watchtowerlvl2_2", "tower_dire_tp_cannonlvl2", "dire_base_builder_blocker", "radiant_base_builder_blocker", "tower_dire_row1_watchtowerlvl2_1", "tower_dire_row1_watchtowerlvl2_2", "tower_dire_row1_watchtowerlvl2_3", "tower_dire_row1_watchtowerlvl2_4", "tower_dire_row1_cannonlvl2", "tower_radiant_row1_watchtowerlvl2_1", "tower_radiant_row1_watchtowerlvl2_2", "tower_radiant_row1_watchtowerlvl2_3", "tower_radiant_row1_watchtowerlvl2_4", "tower_radiant_row1_cannonlvl2", "tower_radiant_row2_cannonlvl2_1", "tower_radiant_row2_cannonlvl2_2", "tower_radiant_row2_watchtowerlvl3_1", "tower_radiant_row2_watchtowerlvl3_2", "tower_radiant_row2_watchtowerlvl3_3", "tower_radiant_row2_watchtowerlvl3_4", "tower_dire_row2_watchtowerlvl3_1", "tower_dire_row2_watchtowerlvl3_2", "tower_dire_row2_watchtowerlvl3_3", "tower_dire_row2_watchtowerlvl3_4", "tower_dire_row2_cannonlvl2_1", "tower_dire_row2_cannonlvl2_2", "tower_dire_row3_snowcone_1", "tower_dire_row3_snowcone_2", "tower_dire_row3_bloodumpster_1", "tower_dire_row3_bloodumpster_2", "tower_dire_row3_bloodumpster_3", "tower_dire_row3_bloodumpster_4", "tower_radiant_row3_snowcone_1", "tower_radiant_row3_snowcone_2", "tower_radiant_row3_bloodumpster_1", "tower_radiant_row3_bloodumpster_2", "tower_radiant_row3_bloodumpster_3", "tower_radiant_row3_bloodumpster_4", "tower_dire_base_destro_1", "tower_dire_base_destro_2", "tower_dire_base_destro_3", "tower_dire_base_destro_4", "tower_radiant_base_destro_1", "tower_radiant_base_destro_2", "tower_radiant_base_destro_3", "tower_radiant_base_destro_4", "farm_dire", "farm_radiant", "tower_radiant_row3_antiinvis", "tower_dire_row3_antiinvis", "tower_radiant_base_antiinvis", "tower_dire_base_antiinvis"}
+--the following is used to add everything to BuildingHelpers grid - add build blockers here
+ALL_LANE_BUILDINGS = {
+"tower_radiant_tp_watchtowerlvl2_1",
+"tower_radiant_tp_watchtowerlvl2_2",
+"tower_radiant_tp_cannonlvl2",
+"tower_dire_tp_watchtowerlvl2_1",
+"tower_dire_tp_watchtowerlvl2_2",
+"tower_dire_tp_cannonlvl2",
+"dire_base_builder_blocker",
+"radiant_base_builder_blocker",
+"radiant_lane_farm_builder_blocker",
+"dire_lane_farm_builder_blocker",
+"radiant_lane_telepad_builder_blocker1",
+"radiant_lane_telepad_builder_blocker2",
+"radiant_lane_telepad_builder_blocker3",
+"dire_lane_telepad_build_blocker1",
+"dire_lane_telepad_build_blocker2",
+"dire_lane_telepad_build_blocker3",
+"tower_dire_row1_watchtowerlvl2_1",
+"tower_dire_row1_watchtowerlvl2_2",
+"tower_dire_row1_watchtowerlvl2_3",
+"tower_dire_row1_watchtowerlvl2_4",
+"tower_dire_row1_cannonlvl2",
+"tower_radiant_row1_watchtowerlvl2_1",
+"tower_radiant_row1_watchtowerlvl2_2",
+"tower_radiant_row1_watchtowerlvl2_3",
+"tower_radiant_row1_watchtowerlvl2_4",
+"tower_radiant_row1_cannonlvl2",
+"tower_radiant_row2_cannonlvl2_1",
+"tower_radiant_row2_cannonlvl2_2",
+"tower_radiant_row2_watchtowerlvl3_1",
+"tower_radiant_row2_watchtowerlvl3_2",
+"tower_radiant_row2_watchtowerlvl3_3",
+"tower_radiant_row2_watchtowerlvl3_4",
+"tower_dire_row2_watchtowerlvl3_1",
+"tower_dire_row2_watchtowerlvl3_2",
+"tower_dire_row2_watchtowerlvl3_3",
+"tower_dire_row2_watchtowerlvl3_4",
+"tower_dire_row2_cannonlvl2_1",
+"tower_dire_row2_cannonlvl2_2",
+"tower_dire_row3_snowcone_1",
+"tower_dire_row3_snowcone_2",
+"tower_dire_row3_bloodumpster_1",
+"tower_dire_row3_bloodumpster_2",
+"tower_dire_row3_bloodumpster_3",
+"tower_dire_row3_bloodumpster_4",
+"tower_radiant_row3_snowcone_1",
+"tower_radiant_row3_snowcone_2",
+"tower_radiant_row3_bloodumpster_1",
+"tower_radiant_row3_bloodumpster_2",
+"tower_radiant_row3_bloodumpster_3",
+"tower_radiant_row3_bloodumpster_4",
+"tower_dire_base_destro_1",
+"tower_dire_base_destro_2",
+"tower_dire_base_destro_3",
+"tower_dire_base_destro_4",
+"tower_radiant_base_destro_1",
+"tower_radiant_base_destro_2",
+"tower_radiant_base_destro_3",
+"tower_radiant_base_destro_4",
+"farm_dire",
+"farm_radiant",
+"tower_radiant_row3_antiinvis",
+"tower_dire_row3_antiinvis",
+"tower_radiant_base_antiinvis",
+"tower_dire_base_antiinvis"}
 
 --the list of possible creeps - used for adding score/gold in OnEntityKilled
 ALL_CREEPS = Set {"npc_dota_creep_dire_lvlone", "npc_dota_creep_dire_lvltwo", "npc_dota_creep_dire_lvlthree", "npc_dota_creep_dire_lvlfour", "npc_dota_creep_dire_lvlfive", "npc_dota_creep_dire_lvlsix", "npc_dota_creep_dire_lvlseven", "npc_dota_creep_dire_lvleight", "npc_dota_creep_dire_lvlnine", "npc_dota_creep_dire_lvlten", "npc_dota_creep_radiant_lvlone", "npc_dota_creep_radiant_lvltwo", "npc_dota_creep_radiant_lvlthree", "npc_dota_creep_radiant_lvlfour", "npc_dota_creep_radiant_lvlfive", "npc_dota_creep_radiant_lvlsix", "npc_dota_creep_radiant_lvlseven", "npc_dota_creep_radiant_lvleight", "npc_dota_creep_radiant_lvlnine", "npc_dota_creep_radiant_lvlten"}
 
---buildings that should have invulnerabilty applied to them
-BUILDINGS_ADD_INVULN = {"radiant_fountain", "dire_fountain", "radiant_base_builder_blocker", "dire_base_builder_blocker"}
+--buildings that should have invulnerabilty applied to them (also to make their health bars not show up)
+BUILDINGS_ADD_INVULN = {
+"radiant_fountain",
+"dire_fountain",
+"radiant_base_builder_blocker",
+"dire_base_builder_blocker",
+"radiant_lane_farm_builder_blocker",
+"dire_lane_farm_builder_blocker",
+"radiant_lane_telepad_builder_blocker1",
+"radiant_lane_telepad_builder_blocker2",
+"radiant_lane_telepad_builder_blocker3",
+"dire_lane_telepad_build_blocker1",
+"dire_lane_telepad_build_blocker2",
+"dire_lane_telepad_build_blocker3"
+}
 
 -- ** ADJUSTING BUILDING HELPER GRID SIZES AT STARTUP
 BASE_BUILDING_BLOCKERS = Set {"radiant_base_builder_blocker", "dire_base_builder_blocker"} --set to size 40 to block building in the base
+LANE_FARM_BUILDING_BLOCKERS = Set {"radiant_lane_farm_builder_blocker", "dire_lane_farm_builder_blocker"}
+LANE_FARM_BUILDING_BLOCKERS_SMALL = Set {
+"radiant_lane_telepad_builder_blocker1",
+"radiant_lane_telepad_builder_blocker2",
+"radiant_lane_telepad_builder_blocker3",
+"dire_lane_telepad_build_blocker1",
+"dire_lane_telepad_build_blocker2",
+"dire_lane_telepad_build_blocker3"
+}
 
 --the radiant/dire farms (the thing that needs to be killed for gg)
 FARM_BUILDINGS = Set {"farm_dire", "farm_radiant"}
@@ -444,7 +530,7 @@ function HeroWarsGameMode:InitGameMode()
 
 	Convars:RegisterCommand( "herowars_test", _boundDebugConsoleCommand, "For debugging and testing", 0 )
 
-	-- Convars:RegisterCommand( "buildings", Dynamic_Wrap(HeroWarsGameMode, 'DisplayBuildingGrids'), "blah", 0 )
+	Convars:RegisterCommand( "buildings", Dynamic_Wrap(HeroWarsGameMode, 'DisplayBuildingGrids'), "blah", 0 )
 
 	-- Convars:RegisterCommand( "herowars_ent_test", Dynamic_Wrap(HeroWarsGameMode, '_EntityIdentifying'), nil, 0 )
 	--Convars:RegisterCommand( "herowars_score", Dynamic_Wrap(HeroWarsGameMode, '_HWConsoleScore'), nil, 0 )
@@ -518,7 +604,7 @@ function HeroWarsGameMode:_SetupCustomBuildings()
 --Setup all the custom buildings. Add/remove invuln and truesight. Also add to buildinghelper grid.
 --Returns: Nothing
 
-	--print ("HWDEBUG: Setting up custom buildings...")
+	print ("HWDEBUG: Setting up custom buildings...")
 	-- ** DEBUG ** Attach the playersinfo debug method
 	--self:_debugPlayersInfo()
 		--4 - FindAllByName - Radiant_Town_Hall
@@ -532,6 +618,7 @@ function HeroWarsGameMode:_SetupCustomBuildings()
 	for i=1, #BUILDINGS_ADD_INVULN do 
 		local buildingName = BUILDINGS_ADD_INVULN[i]
 		--print ("Building Name = " .. buildingName)
+		--print(buildingName)
 		local buildingEnt = Entities:FindByName(prevEnt, buildingName)
 		--buildingEnt:AddModifierByName('modifier_invulnerable')
 		buildingEnt:AddNewModifier(nil, nil, 'modifier_invulnerable' ,nil)
@@ -584,14 +671,33 @@ function HeroWarsGameMode:_SetupCustomBuildings()
 				print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
 				print (unitName)
 			end
-		-- ** Add the farms so players can't build on top of them
-		elseif FARM_BUILDINGS[buildingName] then
-			--print ("FARM_BUILDINGS found")
-			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, 4, nil) --2.34 is based on 150x150
+		elseif LANE_FARM_BUILDING_BLOCKERS[buildingName] then
+			print ("Adding " .. unitName .. " to grid.")
+			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, 46, nil) --2.34 is based on 150x150
 			if BH == -1 then
 				print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
 				print (unitName)
 			end
+
+		elseif LANE_FARM_BUILDING_BLOCKERS_SMALL[buildingName] then
+			print ("Adding " .. unitName .. " to grid.")
+			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, 6, nil) --2.34 is based on 150x150
+			if BH == -1 then
+				print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
+				print (unitName)
+			end
+
+
+		-- -- ** Add the farms so players can't build on top of them
+		-- elseif FARM_BUILDINGS[buildingName] then
+		-- 	--print ("FARM_BUILDINGS found")
+		-- 	local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, 4, nil) --2.34 is based on 150x150
+		-- 	if BH == -1 then
+		-- 		print ("HWERROR: Building Helper failed to add something to the grid. Check the next line.")
+		-- 		print (unitName)
+		-- 	end
+
+		
 		else
 		-- ** Add the rest of the buildings, which are towers, to the grid
 			local BH = BuildingHelper:AddBuildingToGrid(buildingAbsOrigin, BHSize, nil) --2.34 is based on 150x150

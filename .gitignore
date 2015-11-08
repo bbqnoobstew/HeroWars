@@ -234,5 +234,5 @@ pip-log.txt
 *.vagrp_c
 *.vmdl_c
 *.bin
-
+*.vmat
 *.psd
