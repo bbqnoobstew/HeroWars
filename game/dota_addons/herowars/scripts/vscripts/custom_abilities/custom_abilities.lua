@@ -833,15 +833,15 @@ function UpgradeCreepWave(keys)
 		print ("RADIANT Creep Upgrade")
 		--upgrade the creep level
 		HeroWarsGameMode.radiantCreepLvl = HeroWarsGameMode.radiantCreepLvl + 1
-		GameRules:SendCustomMessage("<font color='#0000A0'>RADIANT have upgraded their creeps.</font>", 0, 0)
-		GameRules:SendCustomMessage("<font color='#0000A0'>Your teams creep wave has been upgraded to level " .. HeroWarsGameMode.radiantCreepLvl .. "!!</font>", 2, 0)
+		GameRules:SendCustomMessage("<font color='#0000A0'>RADIANT have upgraded their creeps to level " .. HeroWarsGameMode.radiantCreepLvl .. "!!</font>", 0, 0)
+		--GameRules:SendCustomMessage("<font color='#0000A0'>Your teams creep wave has been upgraded to level " .. HeroWarsGameMode.radiantCreepLvl .. "!!</font>", 2, 0)
 	elseif team == 3 then
 		print ("DIRE Creep Upgrade")
 		--now check to see if upgrading this creep wave will cause us to exceed the upgrade limit
 		--upgrade the creep level
 		HeroWarsGameMode.direCreepLvl = HeroWarsGameMode.direCreepLvl + 1
-		GameRules:SendCustomMessage("<font color='#0000A0'>DIRE have upgraded their creeps.</font>", 0, 0)
-		GameRules:SendCustomMessage("<font color='#0000A0'>Your teams creep wave has been upgraded to level " .. HeroWarsGameMode.direCreepLvl .. "!!</font>", 3, 0)
+		GameRules:SendCustomMessage("<font color='#0000A0'>DIRE have upgraded their creeps to level " .. HeroWarsGameMode.direCreepLvl .. "!!</font>", 0, 0)
+		--GameRules:SendCustomMessage("<font color='#0000A0'>Your teams creep wave has been upgraded to level " .. HeroWarsGameMode.direCreepLvl .. "!!</font>", 3, 0)
 	end
 end
 

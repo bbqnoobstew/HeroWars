@@ -379,7 +379,7 @@ direRoundFourSpawnCount = 0
 
 -- DEBUG --
 --set this to true to get more gold and shorter rounds
-debugMode = false
+debugMode = true
 
 if debugMode then 
 	ROUND_TIME = 60.0
