@@ -318,7 +318,9 @@ ALL_LANE_BUILDINGS = {
 "tower_radiant_row3_antiinvis",
 "tower_dire_row3_antiinvis",
 "tower_radiant_base_antiinvis",
-"tower_dire_base_antiinvis"}
+"tower_dire_base_antiinvis",
+"lane_spell_shop1",
+"lane_spell_shop2"}
 
 --the list of possible creeps - used for adding score/gold in OnEntityKilled
 ALL_CREEPS = Set {"npc_dota_creep_dire_lvlone", "npc_dota_creep_dire_lvltwo", "npc_dota_creep_dire_lvlthree", "npc_dota_creep_dire_lvlfour", "npc_dota_creep_dire_lvlfive", "npc_dota_creep_dire_lvlsix", "npc_dota_creep_dire_lvlseven", "npc_dota_creep_dire_lvleight", "npc_dota_creep_dire_lvlnine", "npc_dota_creep_dire_lvlten", "npc_dota_creep_radiant_lvlone", "npc_dota_creep_radiant_lvltwo", "npc_dota_creep_radiant_lvlthree", "npc_dota_creep_radiant_lvlfour", "npc_dota_creep_radiant_lvlfive", "npc_dota_creep_radiant_lvlsix", "npc_dota_creep_radiant_lvlseven", "npc_dota_creep_radiant_lvleight", "npc_dota_creep_radiant_lvlnine", "npc_dota_creep_radiant_lvlten"}
