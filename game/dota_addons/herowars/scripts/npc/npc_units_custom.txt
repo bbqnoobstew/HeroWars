@@ -5980,7 +5980,7 @@
 				// Abilities
 				//----------------------------------------------------------------
 				
-				"Ability1"					""			// Ability 1. - Needs a passive that is ice arrows
+				"Ability1"					"assassin_frost_arrow"			// Ability 1. - Needs a passive that is ice arrows
 				"Ability2"					""			// Ability 2. - Needs a passive that is permanent invis
 				"Ability3"					""			// Ability 3. - Needs a passive/thinker/timer for hunting heroes
 				"Ability4"					""			// Ability 4. - Needs a passive that is "Ultravision"
