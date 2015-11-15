@@ -2172,7 +2172,7 @@
 		
 		//will need to create a passive that does the AOE damage for the cannon tower
 		"Ability1"					"disband_building"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"ultravision"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -5980,10 +5980,10 @@
 				// Abilities
 				//----------------------------------------------------------------
 				
-				"Ability1"					"assassin_frost_arrow"			// Ability 1. - Needs a passive that is ice arrows
-				"Ability2"					""			// Ability 2. - Needs a passive that is permanent invis
-				"Ability3"					""			// Ability 3. - Needs a passive/thinker/timer for hunting heroes
-				"Ability4"					""			// Ability 4. - Needs a passive that is "Ultravision"
+				"Ability1"					"assassin_frost_arrow"
+				"Ability2"					"assassin_permanent_invis"
+				"Ability3"					"ultravision"
+				"Ability4"					""
 
 				// Armor
 				//----------------------------------------------------------------
@@ -5993,8 +5993,8 @@
 				// Attack
 				//----------------------------------------------------------------
 				"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-				"AttackDamageMin"			"1"		// Damage range min. - 102
-				"AttackDamageMax"			"2"		// Damage range max. - 112
+				"AttackDamageMin"			"102"		// Damage range min. - 102
+				"AttackDamageMax"			"112"		// Damage range max. - 112
 				"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 				"AttackRate"				"1.15"			// Speed of attack.
 				"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
@@ -6050,7 +6050,8 @@
 				"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 				"VisionNighttimeRange"		"1400"		// Range of vision at night time.
 				
-				//Inventory
+				//Script Attachment
+				"vscripts"					"mobs/archer_assassin.lua"
 
 				// Creature Data
 				//----------------------------------------------------------------

@@ -239,7 +239,58 @@ RADIANT_ARMORIES = {"Radiant_Armory_Player1", "Radiant_Armory_Player2", "Radiant
 DIRE_ARMORIES = {"Dire_Armory_Player1", "Dire_Armory_Player2", "Dire_Armory_Player3", "Dire_Armory_Player4", "Dire_Armory_Player5"}
 
 --list of towers to remove true sight from
-TOWERS_REMOVE_TS = {"tower_radiant_tp_watchtowerlvl2_1", "tower_radiant_tp_watchtowerlvl2_2", "tower_radiant_tp_cannonlvl2", "tower_dire_tp_watchtowerlvl2_1", "tower_dire_tp_watchtowerlvl2_2", "tower_dire_tp_cannonlvl2", "tower_dire_row1_watchtowerlvl2_1", "tower_dire_row1_watchtowerlvl2_2", "tower_dire_row1_watchtowerlvl2_3", "tower_dire_row1_watchtowerlvl2_4", "tower_dire_row1_cannonlvl2", "tower_radiant_row1_watchtowerlvl2_1", "tower_radiant_row1_watchtowerlvl2_2", "tower_radiant_row1_watchtowerlvl2_3", "tower_radiant_row1_watchtowerlvl2_4", "tower_radiant_row1_cannonlvl2", "tower_radiant_row2_cannonlvl2_1", "tower_radiant_row2_cannonlvl2_2", "tower_radiant_row2_watchtowerlvl3_1", "tower_radiant_row2_watchtowerlvl3_2", "tower_radiant_row2_watchtowerlvl3_3", "tower_radiant_row2_watchtowerlvl3_4", "tower_dire_row2_watchtowerlvl3_1", "tower_dire_row2_watchtowerlvl3_2", "tower_dire_row2_watchtowerlvl3_3", "tower_dire_row2_watchtowerlvl3_4", "tower_dire_row2_cannonlvl2_1", "tower_dire_row2_cannonlvl2_2", "tower_dire_row3_snowcone_1", "tower_dire_row3_snowcone_2", "tower_dire_row3_bloodumpster_1", "tower_dire_row3_bloodumpster_2", "tower_dire_row3_bloodumpster_3", "tower_dire_row3_bloodumpster_4", "tower_radiant_row3_snowcone_1", "tower_radiant_row3_snowcone_2", "tower_radiant_row3_bloodumpster_1", "tower_radiant_row3_bloodumpster_2", "tower_radiant_row3_bloodumpster_3", "tower_radiant_row3_bloodumpster_4", "tower_dire_base_destro_1", "tower_dire_base_destro_2", "tower_dire_base_destro_3", "tower_dire_base_destro_4", "tower_radiant_base_destro_1", "tower_radiant_base_destro_2", "tower_radiant_base_destro_3", "tower_radiant_base_destro_4", "farm_dire", "farm_radiant"}
+TOWERS_REMOVE_TS = {
+"tower_radiant_tp_watchtowerlvl2_1",
+"tower_radiant_tp_watchtowerlvl2_2",
+"tower_radiant_tp_cannonlvl2",
+"tower_dire_tp_watchtowerlvl2_1",
+"tower_dire_tp_watchtowerlvl2_2",
+"tower_dire_tp_cannonlvl2",
+"tower_dire_row1_watchtowerlvl2_1",
+"tower_dire_row1_watchtowerlvl2_2",
+"tower_dire_row1_watchtowerlvl2_3",
+"tower_dire_row1_watchtowerlvl2_4",
+"tower_dire_row1_cannonlvl2",
+"tower_radiant_row1_watchtowerlvl2_1",
+"tower_radiant_row1_watchtowerlvl2_2",
+"tower_radiant_row1_watchtowerlvl2_3",
+"tower_radiant_row1_watchtowerlvl2_4",
+"tower_radiant_row1_cannonlvl2",
+"tower_radiant_row2_cannonlvl2_1",
+"tower_radiant_row2_cannonlvl2_2",
+"tower_radiant_row2_watchtowerlvl3_1",
+"tower_radiant_row2_watchtowerlvl3_2",
+"tower_radiant_row2_watchtowerlvl3_3",
+"tower_radiant_row2_watchtowerlvl3_4",
+"tower_dire_row2_watchtowerlvl3_1",
+"tower_dire_row2_watchtowerlvl3_2",
+"tower_dire_row2_watchtowerlvl3_3",
+"tower_dire_row2_watchtowerlvl3_4",
+"tower_dire_row2_cannonlvl2_1",
+"tower_dire_row2_cannonlvl2_2",
+"tower_dire_row3_snowcone_1",
+"tower_dire_row3_snowcone_2",
+"tower_dire_row3_bloodumpster_1",
+"tower_dire_row3_bloodumpster_2",
+"tower_dire_row3_bloodumpster_3",
+"tower_dire_row3_bloodumpster_4",
+"tower_radiant_row3_snowcone_1",
+"tower_radiant_row3_snowcone_2",
+"tower_radiant_row3_bloodumpster_1",
+"tower_radiant_row3_bloodumpster_2",
+"tower_radiant_row3_bloodumpster_3",
+"tower_radiant_row3_bloodumpster_4",
+"tower_dire_base_destro_1",
+"tower_dire_base_destro_2",
+"tower_dire_base_destro_3",
+"tower_dire_base_destro_4",
+"tower_radiant_base_destro_1",
+"tower_radiant_base_destro_2",
+"tower_radiant_base_destro_3",
+"tower_radiant_base_destro_4",
+"farm_dire",
+"farm_radiant"}
+
 --DO NOT ADD THIS TOWER TO TS LIST - npc_dota_tower_anti_invis
 -- here are the actual names that i've not included: tower_radiant_row3_antiinvis, tower_dire_row3_antiinvis
 
@@ -616,6 +667,7 @@ function HeroWarsGameMode:_SetupCustomBuildings()
 	 --TODO: FIX THIS SO NOT ALL THINGS ARE VULNERABLE - ONLY TOWERS
 
 	 --make the fogs invulnerable :)
+	--shouldn't this code block be below the one that removes invuln from all the buildings??
 	local prevEnt
 	for i=1, #BUILDINGS_ADD_INVULN do 
 		local buildingName = BUILDINGS_ADD_INVULN[i]
@@ -1623,7 +1675,12 @@ function HeroWarsGameMode:SpawnRadiantUnits()
 	local creature = CreateUnitByName( RADIANT_BASE_WAVE_CREEPS[self.radiantCreepLvl] , RADIANT_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_GOODGUYS )
 	creature:SetInitialGoalEntity( RADIANT_FIRST_WAYPOINT )
 	--print ("HWDEBUG: Radiant base creep wave unit creation completed.")
-
+		--DEBUG/TESTING
+	local unitName = "npc_dota_wave_archer_assassins_lvlone"
+	local creature2 = CreateUnitByName( unitName, RADIANT_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_GOODGUYS )
+	--creature2:AddNewModifier(creature2, nil, 'modifier_invisible', {duration = -1})
+	creature2:SetInitialGoalEntity( RADIANT_FIRST_WAYPOINT )
+	creature2:MoveToPositionAggressive( RADIANT_FIRST_WAYPOINT:GetOrigin() )
 end
 
 
@@ -1639,7 +1696,9 @@ function HeroWarsGameMode:SpawnDireUnits()
 	--DEBUG/TESTING
 	local unitName = "npc_dota_wave_archer_assassins_lvlone"
 	local creature2 = CreateUnitByName( unitName, DIRE_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_BADGUYS )
+	--creature2:AddNewModifier(creature2, nil, 'modifier_invisible', {duration = -1})
 	creature2:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
+	creature2:MoveToPositionAggressive( DIRE_FIRST_WAYPOINT:GetOrigin() )
 end
 
 function HeroWarsGameMode:SpawnRadiantUnitsRoundFour()

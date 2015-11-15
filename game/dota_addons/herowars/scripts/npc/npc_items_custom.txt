@@ -2570,97 +2570,95 @@
 
 		"item_hw_gem_of_true_sight"
 		{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"9307"  //Valve's version of this item uses the ID "30".
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_gameplay/gem01.vmdl"
-		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
-		"AbilityTextureName"			"item_gem"
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_datadriven"
+			"ID"							"9307"  //Valve's version of this item uses the ID "30".
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ITEM"
+			"Model"							"models/props_gameplay/gem01.vmdl"
+			"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
+			"AbilityTextureName"			"item_gem"
 
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"450"
-		"ItemShopTags"					"see_invis"
-		"ItemQuality"					"component"
-		"ItemAliases"					"gem of true sight"
-		"ItemSellable"					"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		//"ItemStockMax"					"1"
-		//"ItemStockTime"					"600.0"
-		"ItemSupport"					"1"
-		"ItemKillable"					"0"
-		"ItemContributesToNetWorthWhenDropped"	"0"
-		"SideShop"						"1"
-		
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"450"
+			"ItemShopTags"					"see_invis"
+			"ItemQuality"					"component"
+			"ItemAliases"					"gem of true sight"
+			"ItemSellable"					"0"
+			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+			//"ItemStockMax"					"1"
+			//"ItemStockTime"					"600.0"
+			"ItemSupport"					"1"
+			"ItemKillable"					"0"
+			"ItemContributesToNetWorthWhenDropped"	"0"
+			"SideShop"						"1"
+			
+			// Sound
+			//-------------------------------------------------------------------------------------------------------------			
+			"UIPickupSound"					"Item.PickUpGemShop"
+			"UIDropSound"					"Item.DropGemShop"
+			"WorldDropSound"				"Item.DropGemWorld"
+			
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1100"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_truesight_datadriven"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-		
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
+				"01"
 				{
-					"ActOnTargets"
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"1100"
+				}
+			}
+			
+			"Modifiers"
+			{
+				"modifier_ultravision"
+				{
+					"Passive"		"1"
+					"OnCreated"
 					{
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Radius" 	"%radius"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-					
-						"Action"    
-						{
-							"RemoveModifier"
-							{
-								"ModifierName"	"modifier_truesight_reveal"
-								"Target" 		"TARGET"
-							}
 
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_truesight_reveal"
-								"Target" 		"TARGET"
-							}
+						"ApplyModifier"
+						{
+							"Target" 		"CASTER"
+							"ModifierName"	"modifier_item_gem_of_true_sight"
 						}
-					}			
-				}		
-			}
+						"ApplyModifier"
+						{
+							"Target" 		"CASTER"
+							"ModifierName"	"modifier_tower_truesight_aura"
+						}
+						 
+						"ApplyModifier"
+						{
+							"Target" 		"CASTER"
+							"ModifierName"	"modifier_truesight"
+						}
+					}
 
-			"modifier_truesight_reveal"
-			{
-				"IsHidden"			"1"
-				"Duration"			"0.5"	//The True Sight effect lingers for 0.5 seconds.
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+					"OnDestroy"
+					{
+						"RemoveModifier"
+						{
+							"Target" 		"CASTER"
+							"ModifierName"	"modifier_item_gem_of_true_sight"
+						}
+						"RemoveModifier"
+						{
+							"Target" 		"CASTER"
+							"ModifierName"	"modifier_tower_truesight_aura"
+						}
+						"RemoveModifier"
+						{
+							"Target" 		"CASTER"
+							"ModifierName"	"modifier_truesight"
+						}
+					}
 				}
 			}
 		}
-	}
 
 		"item_hw_ring_of_protection"
 		{

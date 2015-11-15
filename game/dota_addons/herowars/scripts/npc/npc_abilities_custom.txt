@@ -2091,7 +2091,7 @@
 		"AbilityTextureName"			"drow_ranger_frost_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -2174,6 +2174,121 @@
 		}
 	}
  	
+ 	//=================================================================================================================
+	// Archer Assassin Permanent Invisibility
+	//=================================================================================================================
+	"assassin_permanent_invis"
+	{
+		"MaxLevel"						"1"
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"riki_permanent_invisibility"
+		
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_invisible"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_mob_permanent_invisibility"
+			{
+				"Passive"					"1"
+				"IsHidden"					"1"
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_mob_permanent_invisibility_hidden"
+						"Target"			"CASTER"
+					}
+				}
+				"OnAttack"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_mob_permanent_invisibility_hidden"
+						"Target"			"ATTACKER"
+					}
+				}		
+				"OnAbilityExecuted"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_mob_permanent_invisibility_hidden"
+						"Target"			"UNIT"
+					}
+				}
+			}
+			
+			"modifier_mob_permanent_invisibility_hidden"
+			{
+				"IsHidden"					"1"
+				"Duration"					"%fade_time"
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_invisible"
+						"Target"			"CASTER"
+					}
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"0.5"
+			}
+		}
+	
+	}
+
+ 	//=================================================================================================================
+	// Ultravision
+	//=================================================================================================================
+	"ultravision"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"spectre_reality"
+		
+		"Modifiers"
+		{
+			"modifier_ultravision"
+			{
+				"Passive"		"1"
+				"OnCreated"
+				{
+
+					"ApplyModifier"
+					{
+						"Target" 		"CASTER"
+						"ModifierName"	"modifier_item_gem_of_true_sight"
+					}
+					"ApplyModifier"
+					{
+						"Target" 		"CASTER"
+						"ModifierName"	"modifier_tower_truesight_aura"
+					}
+					 
+					"ApplyModifier"
+					{
+						"Target" 		"CASTER"
+						"ModifierName"	"modifier_truesight"
+					}
+				}
+			}
+		}
+	}
 
 //====================================================================================================================
 // Data Driven Abilities - Completly custom abilities

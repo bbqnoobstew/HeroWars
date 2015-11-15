@@ -885,6 +885,7 @@ function SpawnSpecialCreepWave(keys)
 		end
 	end
 
+	--Automatically adjust the creep waves for archer reinforcements to be the proper UnitType
 	if unitType == "npc_dota_wave_archer_reinforcements_lvlone" then
 		if HeroWarsGameMode.nRoundNumber >= 2 and HeroWarsGameMode.nRoundNumber <= 3 then
 			unitType = "npc_dota_wave_archer_reinforcements_lvltwo"
