@@ -1636,7 +1636,10 @@ function HeroWarsGameMode:SpawnDireUnits()
 	local creature = CreateUnitByName( DIRE_BASE_WAVE_CREEPS[self.direCreepLvl], DIRE_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_BADGUYS )
 	creature:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
 	--print ("HWDEBUG: Dire base creep wave unit creation completed.")
-
+	--DEBUG/TESTING
+	local unitName = "npc_dota_wave_archer_assassins_lvlone"
+	local creature2 = CreateUnitByName( unitName, DIRE_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_BADGUYS )
+	creature2:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
 end
 
 function HeroWarsGameMode:SpawnRadiantUnitsRoundFour()

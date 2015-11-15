@@ -251,6 +251,10 @@ See GameMode:PostLoadPrecache() in barebones.lua for more information
 	--summonable archer reinforcements models
 	PrecacheModel( "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl", context)
 
+	--archer assassins
+	PrecacheUnitByNameSync("npc_dota_wave_archer_assassins_lvlone", context)
+	PrecacheModel( "models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl", context)
+
 	--[[
 		*** trainable controlled units ***
 	]]
