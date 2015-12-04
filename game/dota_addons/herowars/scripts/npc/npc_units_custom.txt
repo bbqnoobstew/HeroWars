@@ -115,7 +115,6 @@
 // CUSTOM UNITS
 //*********************************************************************************
 	
-
 	//=================================================================================
 	// Peon
 	//=================================================================================
@@ -952,7 +951,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"summon_wave_windigo"					// Ability 1
-		"Ability2"					"summon_wave_archer_reinforcements"		// Ability 2
+		"Ability2"					""		// Ability 2
 		"Ability3"					""		// Ability 3
 		"Ability4"					""		// Ability 4
 		"Ability5"					""					// Ability 5
@@ -1028,8 +1027,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"upgrade_creep_wave"					// Ability 1
-		"Ability2"					""					// Ability 2
-		"Ability3"					""		// Ability 3
+		"Ability2"					"summon_wave_archer_reinforcements"					// Ability 2
+		"Ability3"					"summon_wave_archer_assassins"		// Ability 3
 		"Ability4"					""		// Ability 4
 		"Ability5"					""					// Ability 5
 		"Ability6"					""					// Ability 6
@@ -5960,124 +5959,336 @@
 		// Archer Assassins
 		//==
 
-	//=================================================================================
-	// Frost Archer Assassins
-	//=================================================================================
+			//=================================================================================
+			// Frost Archer Assassins
+			//=================================================================================
 
-		//=================================================================================
-		// Extra Wave - Archer Assassins Level 1
-		//=================================================================================
-			"npc_dota_wave_archer_assassins_lvlone"
-			{
-				// General
-				//
-				"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-				"Model"						"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"	// Model.
-				"SoundSet"					"n_creep_Ranged"					// Name of sound set.
-				"ModelScale" 				"0.5"
-				"Level"						"5"
-				
-				// Abilities
-				//----------------------------------------------------------------
-				
-				"Ability1"					"assassin_frost_arrow"
-				"Ability2"					"assassin_permanent_invis"
-				"Ability3"					"ultravision"
-				"Ability4"					""
-
-				// Armor
-				//----------------------------------------------------------------
-				"ArmorPhysical"				"10"			// Physical protection.
-				"MagicalResistance"			"10"			// Magical protection.
-
-				// Attack
-				//----------------------------------------------------------------
-				"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-				"AttackDamageMin"			"102"		// Damage range min. - 102
-				"AttackDamageMax"			"112"		// Damage range max. - 112
-				"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-				"AttackRate"				"1.15"			// Speed of attack.
-				"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
-				"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-				"AttackRange"				"500"		// Range within a target can be attacked.
-				"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
-				"ProjectileSpeed"			"1200"		// Speed of projectile.
-
-				// Attributes
-				//----------------------------------------------------------------
-				"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-				"AttributeBaseStrength"		"0"			// Base strength
-				"AttributeStrengthGain"		"0"			// Strength bonus per level.
-				"AttributeBaseIntelligence"	"0"			// Base intelligence
-				"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
-				"AttributeBaseAgility"		"0"			// Base agility
-				"AttributeAgilityGain"		"0"			// Agility bonus per level.
-
-				// Bounty
-				//----------------------------------------------------------------
-				"BountyXP"					"30"		// Experience earn.
-				"BountyGoldMin"				"0"		// Gold earned min.
-				"BountyGoldMax"				"0"		// Gold earned max.
-
-				// Bounds
-				//----------------------------------------------------------------
-				"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
-				"RingRadius"				"45"
-				"HealthBarOffset"			"150"
-
-				// Movement
-				//----------------------------------------------------------------
-				"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-				"MovementSpeed"				"375"		// Speed
-				"MovementTurnRate"			"0.6	"		// Turning rate.
-
-				// Status
-				//----------------------------------------------------------------
-				"StatusHealth"				"500"		// Base health.
-				"StatusHealthRegen"			"0.5"			// Health regeneration rate.
-				"StatusMana"				"500"		// Base mana.
-				"StatusManaRegen"			"0.5"		// Mana regeneration rate.
-
-				// Team
-				//----------------------------------------------------------------
-				"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
-				"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-				"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-				"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-				
-				// Vision
-				//----------------------------------------------------------------
-				"VisionDaytimeRange"		"1400"		// Range of vision during day light.
-				"VisionNighttimeRange"		"1400"		// Range of vision at night time.
-				
-				//Script Attachment
-				"vscripts"					"mobs/archer_assassin.lua"
-
-				// Creature Data
-				//----------------------------------------------------------------
-				"Creature"
-				{
-
-					"CanRespawn"							"0"
-					"DisableClumpingBehavior"				"1"
-
-					//Basic AI State
-					//-----------------------------------------------------------------
-					"DefaultState"							"Invade"
-
-					"States"
+				//=================================================================================
+				// Extra Wave - Archer Assassins Level 1
+				//=================================================================================
+					"npc_dota_wave_archer_assassins_lvlone"
 					{
-						"Invade"
+						// General
+						//
+						"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+						"Model"						"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"	// Model.
+						"SoundSet"					"n_creep_Ranged"					// Name of sound set.
+						"ModelScale" 				"0.5"
+						"Level"						"5"
+						
+						// Abilities
+						//----------------------------------------------------------------
+						
+						"Ability1"					"assassin_frost_arrow"
+						"Ability2"					"assassin_permanent_invis"
+						"Ability3"					"ultravision"
+						"Ability4"					""
+
+						// Armor
+						//----------------------------------------------------------------
+						"ArmorPhysical"				"10"			// Physical protection.
+						"MagicalResistance"			"10"			// Magical protection.
+
+						// Attack
+						//----------------------------------------------------------------
+						"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+						"AttackDamageMin"			"102"		// Damage range min. - 102
+						"AttackDamageMax"			"112"		// Damage range max. - 112
+						"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+						"AttackRate"				"1.15"			// Speed of attack.
+						"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+						"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+						"AttackRange"				"500"		// Range within a target can be attacked.
+						"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+						"ProjectileSpeed"			"1200"		// Speed of projectile.
+
+						// Attributes
+						//----------------------------------------------------------------
+						"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+
+						// Bounty
+						//----------------------------------------------------------------
+						"BountyXP"					"30"		// Experience earn.
+						"BountyGoldMin"				"0"		// Gold earned min.
+						"BountyGoldMax"				"0"		// Gold earned max.
+
+						// Bounds
+						//----------------------------------------------------------------
+						"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+						"RingRadius"				"45"
+						"HealthBarOffset"			"150"
+
+						// Movement
+						//----------------------------------------------------------------
+						"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+						"MovementSpeed"				"375"		// Speed
+						"MovementTurnRate"			"0.6"		// Turning rate.
+
+						// Status
+						//----------------------------------------------------------------
+						"StatusHealth"				"500"		// Base health.
+						"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+						"StatusMana"				"500"		// Base mana.
+						"StatusManaRegen"			"0.5"		// Mana regeneration rate.
+
+						// Team
+						//----------------------------------------------------------------
+						"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
+						"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+						"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+						"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+						
+						// Vision
+						//----------------------------------------------------------------
+						"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+						"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+						
+						//Script Attachment
+						"vscripts"					"mobs/archer_assassin.lua"
+
+						// Creature Data
+						//----------------------------------------------------------------
+						"Creature"
 						{
-							"Name"							"Invade"
-							"Aggression"					"100.0"
-							"Avoidance"						"0.0"
-							"Support"						"0.0"
+
+							"CanRespawn"							"0"
+							"DisableClumpingBehavior"				"1"
+
+							//Basic AI State
+							//-----------------------------------------------------------------
+							"DefaultState"							"Invade"
+
+							"States"
+							{
+								"Invade"
+								{
+									"Name"							"Invade"
+									"Aggression"					"100.0"
+									"Avoidance"						"0.0"
+									"Support"						"0.0"
+								}
+							}
+
 						}
 					}
 
-				}
-			}
+				//=================================================================================
+				// Extra Wave - Archer Assassins Level 2
+				//=================================================================================
+					"npc_dota_wave_archer_assassins_lvltwo"
+					{
+						// General
+						//
+						"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+						"Model"						"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"	// Model.
+						"SoundSet"					"n_creep_Ranged"					// Name of sound set.
+						"ModelScale" 				"0.6"
+						"Level"						"10"
+						
+						// Abilities
+						//----------------------------------------------------------------
+						
+						"Ability1"					"assassin_frost_arrow"
+						"Ability2"					"assassin_permanent_invis"
+						"Ability3"					"ultravision"
+						"Ability4"					""
+
+						// Armor
+						//----------------------------------------------------------------
+						"ArmorPhysical"				"15"			// Physical protection.
+						"MagicalResistance"			"15"			// Magical protection.
+
+						// Attack
+						//----------------------------------------------------------------
+						"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+						"AttackDamageMin"			"202"		// Damage range min. - 102
+						"AttackDamageMax"			"212"		// Damage range max. - 112
+						"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+						"AttackRate"				"1.0"			// Speed of attack.
+						"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+						"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+						"AttackRange"				"500"		// Range within a target can be attacked.
+						"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+						"ProjectileSpeed"			"1200"		// Speed of projectile.
+
+						// Attributes
+						//----------------------------------------------------------------
+						"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+
+						// Bounty
+						//----------------------------------------------------------------
+						"BountyXP"					"30"		// Experience earn.
+						"BountyGoldMin"				"0"		// Gold earned min.
+						"BountyGoldMax"				"0"		// Gold earned max.
+
+						// Bounds
+						//----------------------------------------------------------------
+						"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+						"RingRadius"				"45"
+						"HealthBarOffset"			"150"
+
+						// Movement
+						//----------------------------------------------------------------
+						"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+						"MovementSpeed"				"400"		// Speed
+						"MovementTurnRate"			"0.6"		// Turning rate.
+
+						// Status
+						//----------------------------------------------------------------
+						"StatusHealth"				"1000"		// Base health.
+						"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+						"StatusMana"				"1000"		// Base mana.
+						"StatusManaRegen"			"0.5"		// Mana regeneration rate.
+
+						// Team
+						//----------------------------------------------------------------
+						"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
+						"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+						"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+						"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+						
+						// Vision
+						//----------------------------------------------------------------
+						"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+						"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+						
+						//Script Attachment
+						"vscripts"					"mobs/archer_assassin.lua"
+
+						// Creature Data
+						//----------------------------------------------------------------
+						"Creature"
+						{
+
+							"CanRespawn"							"0"
+							"DisableClumpingBehavior"				"1"
+
+							//Basic AI State
+							//-----------------------------------------------------------------
+							"DefaultState"							"Invade"
+
+							"States"
+							{
+								"Invade"
+								{
+									"Name"							"Invade"
+									"Aggression"					"100.0"
+									"Avoidance"						"0.0"
+									"Support"						"0.0"
+								}
+							}
+
+						}
+					}
+
+				//=================================================================================
+				// Extra Wave - Archer Assassins Level 3
+				//=================================================================================
+					"npc_dota_wave_archer_assassins_lvlthree"
+					{
+						// General
+						//
+						"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+						"Model"						"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"	// Model.
+						"SoundSet"					"n_creep_Ranged"					// Name of sound set.
+						"ModelScale" 				"0.7"
+						"Level"						"15"
+						
+						// Abilities
+						//----------------------------------------------------------------
+						
+						"Ability1"					"assassin_frost_arrow"
+						"Ability2"					"assassin_permanent_invis"
+						"Ability3"					"ultravision"
+						"Ability4"					"alpha_wolf_critical_strike"
+
+						// Armor
+						//----------------------------------------------------------------
+						"ArmorPhysical"				"20"			// Physical protection.
+						"MagicalResistance"			"20"			// Magical protection.
+
+						// Attack
+						//----------------------------------------------------------------
+						"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+						"AttackDamageMin"			"302"		// Damage range min. - 102
+						"AttackDamageMax"			"312"		// Damage range max. - 112
+						"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+						"AttackRate"				"0.85"			// Speed of attack.
+						"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+						"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+						"AttackRange"				"500"		// Range within a target can be attacked.
+						"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+						"ProjectileSpeed"			"1200"		// Speed of projectile.
+
+						// Attributes
+						//----------------------------------------------------------------
+						"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+
+						// Bounty
+						//----------------------------------------------------------------
+						"BountyXP"					"30"		// Experience earn.
+						"BountyGoldMin"				"0"		// Gold earned min.
+						"BountyGoldMax"				"0"		// Gold earned max.
+
+						// Bounds
+						//----------------------------------------------------------------
+						"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+						"RingRadius"				"45"
+						"HealthBarOffset"			"150"
+
+						// Movement
+						//----------------------------------------------------------------
+						"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+						"MovementSpeed"				"425"		// Speed
+						"MovementTurnRate"			"0.7"		// Turning rate.
+
+						// Status
+						//----------------------------------------------------------------
+						"StatusHealth"				"1500"		// Base health.
+						"StatusHealthRegen"			"1"			// Health regeneration rate.
+						"StatusMana"				"1500"		// Base mana.
+						"StatusManaRegen"			"1"		// Mana regeneration rate.
+
+						// Team
+						//----------------------------------------------------------------
+						"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
+						"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+						"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+						"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+						
+						// Vision
+						//----------------------------------------------------------------
+						"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+						"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+						
+						//Script Attachment
+						"vscripts"					"mobs/archer_assassin.lua"
+
+						// Creature Data
+						//----------------------------------------------------------------
+						"Creature"
+						{
+
+							"CanRespawn"							"0"
+							"DisableClumpingBehavior"				"1"
+
+							//Basic AI State
+							//-----------------------------------------------------------------
+							"DefaultState"							"Invade"
+
+							"States"
+							{
+								"Invade"
+								{
+									"Name"							"Invade"
+									"Aggression"					"100.0"
+									"Avoidance"						"0.0"
+									"Support"						"0.0"
+								}
+							}
+
+						}
+					}					
 
 	//=================================================================================
 	// TESTING

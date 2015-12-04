@@ -253,6 +253,8 @@ See GameMode:PostLoadPrecache() in barebones.lua for more information
 
 	--archer assassins
 	PrecacheUnitByNameSync("npc_dota_wave_archer_assassins_lvlone", context)
+	PrecacheUnitByNameSync("npc_dota_wave_archer_assassins_lvltwo", context)
+	PrecacheUnitByNameSync("npc_dota_wave_archer_assassins_lvlthree", context)
 	PrecacheModel( "models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl", context)
 
 	--[[

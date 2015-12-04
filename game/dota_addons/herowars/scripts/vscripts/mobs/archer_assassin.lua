@@ -40,12 +40,12 @@ function AAThink()
 	--if the entity has no target
 	if thisEntity:GetAttackTarget() == nil then
 		--find all heroes in a radius, returning the list with the closest first.
-		local units = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), thisEntity, 1600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+		local units = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), thisEntity, 1400, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 		if units ~= nil then
 			if #units > 0 then
 				for i=1,#units do
 					if not units[i]:IsAttackImmune() then
-						print("AI found NEW target: " .. units[i]:GetUnitName())
+						--print("AI found NEW target: " .. units[i]:GetUnitName())
 						thisEntity:SetForceAttackTarget(units[i])
 						break
 					end
@@ -54,7 +54,7 @@ function AAThink()
 			--here
 		end
 	else
-		print("AI has an EXISTING attack target of: " .. thisEntity:GetAttackTarget():GetUnitName())
+		--print("AI has an EXISTING attack target of: " .. thisEntity:GetAttackTarget():GetUnitName())
 	end
 
 	--1 to 1.5

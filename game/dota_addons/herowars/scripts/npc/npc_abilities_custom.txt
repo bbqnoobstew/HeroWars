@@ -56,18 +56,18 @@
 	// debug_echo
 	//=================================================================================================================
 	"debug_echo"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"axe_berserkers_call"
-        //"Ability Cast Range" "0"
-        //"Ability Cast Point" "0"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"axe_berserkers_call"
+		//"Ability Cast Range" "0"
+		//"Ability Cast Point" "0"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -80,8 +80,8 @@
 		"AbilityManaCost" "0"
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		"OnUpgrade"
 		{
@@ -93,37 +93,37 @@
 				"Function"			"debugEcho"
 			}
 		}
-        // When we start the spell (ie, after we have clicked the location we want)
-        "OnSpellStart"
-        {
-            // We want to run a lua script
-            "RunScript"
-            {
-                // The script file we call
-                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-                // The specific function we want
-                "Function"			"debugEcho2"
-            }       
-        }
-    }
+		// When we start the spell (ie, after we have clicked the location we want)
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"debugEcho2"
+			}       
+		}
+	}
 
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// debugGold - testing adding/removing gold from the hero that presses the button
 	//=================================================================================================================
 	"debug_gold"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"alchemist_goblins_greed"
-        //"Ability Cast Range" "0"
-        //"Ability Cast Point" "0"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"alchemist_goblins_greed"
+		//"Ability Cast Range" "0"
+		//"Ability Cast Point" "0"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -136,51 +136,51 @@
 		"AbilityManaCost" "0"
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		// When we start the spell (ie, after we have clicked the location we want)
-        "OnSpellStart"
-        {
-            // We want to run a lua script
-            "RunScript"
-            {
-                // The script file we call
-                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-                // The specific function we want
-                "Function"			"debugGold"
-                //Can I pass in whatever? - see http://pastie.org/9472049
-                //Yes, anything can be passed in and the script will contain these k,v pairs
-                "GoldCost"			"250"
-            }       
-        }
-    }
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				// The script file we call
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				// The specific function we want
+				"Function"			"debugGold"
+				//Can I pass in whatever? - see http://pastie.org/9472049
+				//Yes, anything can be passed in and the script will contain these k,v pairs
+				"GoldCost"			"250"
+			}       
+		}
+	}
 
 
 //=================================================================================================================
 // Train Units
 //=================================================================================================================
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Train a Unit (peon/master peon) - this can be copied and pasted - change the name (train_peon) to w/e and the unit name and the cost to train different units
 	//=================================================================================================================
 	"train_peon"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"earthshaker_enchant_totem"
-        "AbilityCooldown"				"1"
-        "AbilityChannelTime"			"6.0"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"earthshaker_enchant_totem"
+		"AbilityCooldown"				"1"
+		"AbilityChannelTime"			"6.0"
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		// Cost
 		//Define the costs as special abilities so we can reference them in addon_english.txt
@@ -259,7 +259,7 @@
 				"FoodCost"			"%foodcost"
 			}
 		}
-    }
+	}
 
 
 	//=================================================================================================================
@@ -371,26 +371,26 @@
 		}
 	}
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Train a Superior Archer
 	//=================================================================================================================
 	"train_sup_archer"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"drow_ranger_marksmanship"
-        "AbilityCooldown"				"1"
-        "AbilityChannelTime"			"2.0"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"drow_ranger_marksmanship"
+		"AbilityCooldown"				"1"
+		"AbilityChannelTime"			"2.0"
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		// Cost
 		//Define the costs as special abilities so we can reference them in addon_english.txt
@@ -467,26 +467,26 @@
 		}
 	}
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Train a Priest
 	//=================================================================================================================
 	"train_priest"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"omniknight_repel"
-        "AbilityCooldown"				"1"
-        "AbilityChannelTime"			"2.0"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"omniknight_repel"
+		"AbilityCooldown"				"1"
+		"AbilityChannelTime"			"2.0"
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		// Cost
 		//Define the costs as special abilities so we can reference them in addon_english.txt
@@ -559,26 +559,26 @@
 		}
 	}
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Train a Mech Warrior
 	//=================================================================================================================
 	"train_mech"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"tinker_march_of_the_machines"
-        "AbilityCooldown"				"1"
-        "AbilityChannelTime"			"2.0"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"tinker_march_of_the_machines"
+		"AbilityCooldown"				"1"
+		"AbilityChannelTime"			"2.0"
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		// Cost
 		//Define the costs as special abilities so we can reference them in addon_english.txt
@@ -661,7 +661,7 @@
 	//=================================================================================================================
 	// Build a Watch Tower Lvl 1
 	//=================================================================================================================
-    "build_watch_tower_lvlone"
+	"build_watch_tower_lvlone"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -759,7 +759,7 @@
 	//=================================================================================================================
 	// Build a Watch Tower Lvl 4
 	//=================================================================================================================
-    "build_watch_tower_lvlfour"
+	"build_watch_tower_lvlfour"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -856,7 +856,7 @@
 	//=================================================================================================================
 	"build_cannonlvlfour_tower"
 	{				
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -953,7 +953,7 @@
 	//=================================================================================================================
 	"build_anti_invis_tower"
 	{				
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -1050,7 +1050,7 @@
 	//=================================================================================================================
 	"build_snowcone_tower"
 	{				
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -1148,7 +1148,7 @@
 	//=================================================================================================================
 	"build_theslower_tower"
 	{				
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -1246,7 +1246,7 @@
 	//=================================================================================================================
 	"build_thedestroyer_tower"
 	{				
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -1344,7 +1344,7 @@
 	//=================================================================================================================
 	"build_longrange_tower"
 	{				
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -1442,7 +1442,7 @@
 	//=================================================================================================================
 	"build_advlongrange_tower"
 	{
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
 		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -1541,7 +1541,7 @@
 	//=================================================================================================================
 	// Build a Bank
 	//=================================================================================================================
-    "build_bank"
+	"build_bank"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1639,20 +1639,20 @@
 //=================================================================================================================
 // *** DISBAND ***
 //=================================================================================================================
-    //=================================================================================================================
+	//=================================================================================================================
 	// Disband a building
 	//=================================================================================================================
 	"disband_building"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"phantom_assassin_coup_de_grace"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"phantom_assassin_coup_de_grace"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1660,8 +1660,8 @@
 		//fantastic way to do it... BUT IT DOESNT WORK... It trys to charge the caster, which is the building, which has no gold...
 
 
-        // This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
-        //"AOERadius" "45"
+		// This is important. This allows us to see the area the tower will be placed on. You ned to make this the same as PLACED_BUILDING_RADIUS in the lua script for consistency.
+		//"AOERadius" "45"
 		
 		// When we start the spell (ie, after we have clicked the location we want)
 		"OnSpellStart"
@@ -1683,21 +1683,21 @@
 // Abilities for creep waves (upgrade, summon special waves)
 //====================================================================================================================
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Upgrade the creep wave
 	//=================================================================================================================
 	"upgrade_creep_wave"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        // These aren't important, but make testing a tad easier
-        "AbilityTextureName" 			"elder_titan_ancestral_spirit"
-        //"AbilitySharedWithTeammates"	"1"
+		// These aren't important, but make testing a tad easier
+		"AbilityTextureName" 			"elder_titan_ancestral_spirit"
+		//"AbilitySharedWithTeammates"	"1"
 		"AbilityCooldown"				"105" //5 seconds for testing, 105 is real value
 
 		"AbilitySpecial"
@@ -1734,21 +1734,21 @@
 		}
 	}
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Summon Special Wave - Windigo/Windigo Brat/Hydralisk
 	//=================================================================================================================
 	"summon_wave_windigo"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        "AbilityTextureName" 			"life_stealer_infest"
+		"AbilityTextureName" 			"life_stealer_infest"
 
-        "AbilityCooldown"				"0" //5 seconds for testing
+		"AbilityCooldown"				"0" //5 seconds for testing
 		"AbilityChannelTime"			"12 12 38" //24.5 is derived from taking the windigo (12) and the hydra (37) and taking the average since I cant adjust.
 
 		// Cost
@@ -1821,37 +1821,37 @@
 		}
 
 		// When we start the spell (ie, after we have clicked the location we want)
-        "OnChannelSucceeded"
-        {
-            // We want to run a lua script
-            "RunScript"
-            {
-                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-                "Function"			"SpawnSpecialCreepWave"
-                "GoldCost"			"%levelone_cost"
-                "lvltwo_GoldCost"	"%leveltwo_cost"
-                "lvlthree_GoldCost"	"%levelthree_cost"
-                //The type (name) of the unit to summon
-                "UnitType"			"npc_dota_wave_windigo"
-            }
-        }
-    }
+		"OnChannelSucceeded"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"SpawnSpecialCreepWave"
+				"GoldCost"			"%levelone_cost"
+				"lvltwo_GoldCost"	"%leveltwo_cost"
+				"lvlthree_GoldCost"	"%levelthree_cost"
+				//The type (name) of the unit to summon
+				"UnitType"			"npc_dota_wave_windigo"
+			}
+		}
+	}
 
-    //=================================================================================================================
+	//=================================================================================================================
 	// Summon Special Wave - Archer Reinforcements 1/2/3
 	//=================================================================================================================
 	"summon_wave_archer_reinforcements"
-    {
-        // All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
-        "BaseClass"						"ability_datadriven"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		  
-        "AbilityTextureName" 			"clinkz_strafe"
+		"AbilityTextureName" 			"clinkz_strafe"
 
-        "AbilityCooldown"				"200" //5 seconds for testing
+		"AbilityCooldown"				"200" //5 seconds for testing
 		
 		// Cost
 		//Define the costs as special abilities so we can reference them in addon_english.txt
@@ -1862,23 +1862,76 @@
 				"var_type"		"FIELD_INTEGER"
 				"goldcost"		"175" //will be much higher
 			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"cooldown"		"200.0"
+			}
 		}
 
 		// When we start the spell (ie, after we have clicked the location we want)
-        "OnSpellStart"
-        {
-            // We want to run a lua script
-            "RunScript"
-            {
-                "ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
-                "Function"			"SpawnSpecialCreepWave"
-                "GoldCost"			"%goldcost"
-                //The type (name) of the unit to summon
-                "UnitType"			"npc_dota_wave_archer_reinforcements_lvlone"
-            }
-        }
-    }
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"SpawnSpecialCreepWave"
+				"GoldCost"			"%goldcost"
+				//The type (name) of the unit to summon
+				"UnitType"			"npc_dota_wave_archer_reinforcements_lvlone"
+				"Cooldown"			"%cooldown"
+			}
+		}
+	}
 
+	//=================================================================================================================
+	// Summon Special Wave - Archer ASSASSINS 1/2/3
+	//=================================================================================================================
+	"summon_wave_archer_assassins"
+	{
+		// All abilites require a base class, and since this class is not simply over-riding an old skill, it must be "data_driven"
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		  
+		"AbilityTextureName" 			"enigma_demonic_conversion"
+
+		"AbilityCooldown"				"400"
+		
+		// Cost
+		//Define the costs as special abilities so we can reference them in addon_english.txt
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"goldcost"		"400" //will be much higher
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"cooldown"		"400.0"
+			}
+		}
+
+		// When we start the spell (ie, after we have clicked the location we want)
+		"OnSpellStart"
+		{
+			// We want to run a lua script
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/custom_abilities/custom_abilities.lua"
+				"Function"			"SpawnSpecialCreepWave"
+				"GoldCost"			"%goldcost"
+				//The type (name) of the unit to summon
+				"UnitType"			"npc_dota_wave_archer_assassins_lvlone"
+				"Cooldown"			"%cooldown"
+			}
+		}
+	}
 
 //====================================================================================================================
 // My Custom Abilities
@@ -2173,8 +2226,8 @@
 			}
 		}
 	}
- 	
- 	//=================================================================================================================
+	
+	//=================================================================================================================
 	// Archer Assassin Permanent Invisibility
 	//=================================================================================================================
 	"assassin_permanent_invis"
@@ -2252,7 +2305,7 @@
 	
 	}
 
- 	//=================================================================================================================
+	//=================================================================================================================
 	// Ultravision
 	//=================================================================================================================
 	"ultravision"
@@ -2298,73 +2351,73 @@
 
 	"orb_ability_example"
 	{
-	    "BaseClass"                 "ability_datadriven"
-	    "AbilityTextureName" 		"ursa_earthshock"
-	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
-	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
-	    "AbilityCastPoint"			"0.0"
-	    "AbilityCastRange"			"900"
-	    "AbilityCooldown"           "0"
-	    "AbilityManaCost"           "0"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"			"FIELD_INTEGER"
-	            "RangeDamage"       "75"
-	        }
-	    }
+		"BaseClass"                 "ability_datadriven"
+		"AbilityTextureName" 		"ursa_earthshock"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
+		"AbilityCastPoint"			"0.0"
+		"AbilityCastRange"			"900"
+		"AbilityCooldown"           "0"
+		"AbilityManaCost"           "0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"RangeDamage"       "75"
+			}
+		}
 	 
-	    "Modifiers"
-	    {
-	        "TestOrb_Modifier"
-	        {
-	            "Passive"     "1"
-	            //"IsHidden"    "1"
+		"Modifiers"
+		{
+			"TestOrb_Modifier"
+			{
+				"Passive"     "1"
+				//"IsHidden"    "1"
 
-	            "Orb"
-	            {
-	                "Priority"			"DOTA_ORB_PRIORITY_ABILITY"
-	                "ProjectileName"    "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-	                "CastAttack"		"1"
-	            }
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+					"CastAttack"		"1"
+				}
 
-	            "OnOrbImpact"
-	            {
-	                "FireEffect"
-	                {
-	                    "EffectName"            "particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
-	                    "EffectAttachType"      "attach_hitloc"
-	                    "Target"                "TARGET"
-	                }
+				"OnOrbImpact"
+				{
+					"FireEffect"
+					{
+						"EffectName"            "particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
+						"EffectAttachType"      "attach_hitloc"
+						"Target"                "TARGET"
+					}
 
-	                "Damage"
-	                {
-	                    "Type"			"DAMAGE_TYPE_PURE"
-	                    "Damage"		"%RangeDamage"
-	                    "Target"
-	                    {
-	                        "Center"    "TARGET"
-	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	                        "Type"      "DOTA_UNIT_TARGET_ALL"
-	                        "Radius"    "275"
-	                    }
-	                }
-	                "Stun"
-	                {
-	                    "Duration"      "2"
-	                    "Target"
-	                    {
-	                        "Center"    "TARGET"
-	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	                        "Type"      "DOTA_UNIT_TARGET_ALL"
-	                        "Radius"    "275"
-	                    }
-	                }
-	            }
-	        }
-	    }
+					"Damage"
+					{
+						"Type"			"DAMAGE_TYPE_PURE"
+						"Damage"		"%RangeDamage"
+						"Target"
+						{
+							"Center"    "TARGET"
+							"Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Type"      "DOTA_UNIT_TARGET_ALL"
+							"Radius"    "275"
+						}
+					}
+					"Stun"
+					{
+						"Duration"      "2"
+						"Target"
+						{
+							"Center"    "TARGET"
+							"Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Type"      "DOTA_UNIT_TARGET_ALL"
+							"Radius"    "275"
+						}
+					}
+				}
+			}
+		}
 	}
 
 	//=================================================================================================================
@@ -2546,7 +2599,7 @@
 
 	//-------------------------------------------------------------------------------------------------------------
 	// BuildingHelper Dummy Unit
-    //-------------------------------------------------------------------------------------------------------------
+	//-------------------------------------------------------------------------------------------------------------
 	"bh_dummy_unit"
 	  {
 		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"

@@ -1442,24 +1442,18 @@ function HeroWarsGameMode:_echoGPK()
 end
 
 function HeroWarsGameMode:_echoRoundTwo()
+--Print (say) the announcements for Round 2
 
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>*** Round Two Started ***</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Gold increase of +1 per kill</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Master Peon can be trained</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Level 2 Archer Reinforcements available</font>", 0, 0)
 	Say(nil,"* Round Two Started *", false)
 	Say(nil,"Gold increase of +1 per kill", false)
 	Say(nil,"Master Peon can be trained", false)
 	Say(nil,"Level 2 Archer Reinforcements available", false)
+	Say(nil,"Level 2 Archer Assassins available", false)
 end
 
 function HeroWarsGameMode:_echoRoundThree()
+--Print (say) the announcements for Round 3
 
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'>*** Round Three Started ***<b></font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Gold increase of +1 per kill</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Windigo Brats Wave available</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Bomb Squads can be trained</font>", 0, 0)
-	--GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Superior Archers can be trained</font>", 0, 0)
 	Say(nil,"* Round Three Started *", false)
 	Say(nil,"Gold increase of +1 per kill", false)
 	Say(nil,"Windigo Brats Wave available", false)
@@ -1468,21 +1462,18 @@ function HeroWarsGameMode:_echoRoundThree()
 end
 
 function HeroWarsGameMode:_echoRoundFour()
+--Print (say) the announcements for Round 4
 
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>*** Round Four Started ***</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Gold increase of +1 per kill</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Golems will now spawn periodically</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Hydralisks Wave available</font>", 0, 0)
-	-- GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>Level 3 Archer Reinforcements available</font>", 0, 0)
-	--GameRules:SendCustomMessage("<font color='#848484' face='Dota Hypatia Bold'><b>+200% experience earned</font>", 0, 0)
 	Say(nil,"* Round Four Started *", false)
 	Say(nil,"Gold increase of +1 per kill", false)
 	Say(nil,"Golems will now spawn periodically", false)
 	Say(nil,"Hydralisks Wave available", false)
 	Say(nil,"Level 3 Archer Reinforcements available", false)
+	Say(nil,"Level 3 Archer Assassins available", false)
 end
 
 function HeroWarsGameMode:_showRoundMessages()
+--Handle which round message to show
 	--echo GPK
 	self:_echoGPK()
 	if self.nRoundNumber == 2 then self:_echoRoundTwo() end
@@ -1676,11 +1667,11 @@ function HeroWarsGameMode:SpawnRadiantUnits()
 	creature:SetInitialGoalEntity( RADIANT_FIRST_WAYPOINT )
 	--print ("HWDEBUG: Radiant base creep wave unit creation completed.")
 		--DEBUG/TESTING
-	local unitName = "npc_dota_wave_archer_assassins_lvlone"
-	local creature2 = CreateUnitByName( unitName, RADIANT_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_GOODGUYS )
+	--local unitName = "npc_dota_wave_archer_assassins_lvlone"
+	--local creature2 = CreateUnitByName( unitName, RADIANT_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_GOODGUYS )
 	--creature2:AddNewModifier(creature2, nil, 'modifier_invisible', {duration = -1})
-	creature2:SetInitialGoalEntity( RADIANT_FIRST_WAYPOINT )
-	creature2:MoveToPositionAggressive( RADIANT_FIRST_WAYPOINT:GetOrigin() )
+	--creature2:SetInitialGoalEntity( RADIANT_FIRST_WAYPOINT )
+	--creature2:MoveToPositionAggressive( RADIANT_FIRST_WAYPOINT:GetOrigin() )
 end
 
 
@@ -1694,33 +1685,27 @@ function HeroWarsGameMode:SpawnDireUnits()
 	creature:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
 	--print ("HWDEBUG: Dire base creep wave unit creation completed.")
 	--DEBUG/TESTING
-	local unitName = "npc_dota_wave_archer_assassins_lvlone"
-	local creature2 = CreateUnitByName( unitName, DIRE_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_BADGUYS )
+	--local unitName = "npc_dota_wave_archer_assassins_lvlone"
+	--local creature2 = CreateUnitByName( unitName, DIRE_CREEP_SPAWN_LOCATION:GetAbsOrigin() + spawnOffsetVector, true, nil, nil, DOTA_TEAM_BADGUYS )
 	--creature2:AddNewModifier(creature2, nil, 'modifier_invisible', {duration = -1})
-	creature2:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
-	creature2:MoveToPositionAggressive( DIRE_FIRST_WAYPOINT:GetOrigin() )
+	--creature2:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
+	--creature2:MoveToPositionAggressive( DIRE_FIRST_WAYPOINT:GetOrigin() )
 end
 
 function HeroWarsGameMode:SpawnRadiantUnitsRoundFour()
+--Spawn Round Four Extra Units (Radiant)
 
 	--print ("HWDEBUG: Spawning Radiant Base Creep Wave Units for Round Four.")
 	local creature = CreateUnitByName( "npc_dota_golem_radiant_roundfour" , RADIANT_CREEP_SPAWN_LOCATION:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_GOODGUYS )
 	creature:SetInitialGoalEntity( RADIANT_FIRST_WAYPOINT )
-	--print ("HWDEBUG: Radiant base creep wave additional round 4 unit creation completed.")
-	radiantRoundFourSpawnCount = radiantRoundFourSpawnCount + 1
-	--print ("Number of Radiant Round 4 Creeps = " .. radiantRoundFourSpawnCount)
 end
 
 function HeroWarsGameMode:SpawnDireUnitsRoundFour()
+--Spawn Round Four Extra Units (Dire)
 
 	--print ("HWDEBUG: Spawning Dire Base Creep Wave Units for Round Four.")
 	local creature = CreateUnitByName( "npc_dota_golem_dire_roundfour" , DIRE_CREEP_SPAWN_LOCATION:GetAbsOrigin() + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 	creature:SetInitialGoalEntity( DIRE_FIRST_WAYPOINT )
-	--print ("HWDEBUG: Dire base creep wave additional round 4 unit creation completed.")
-	direRoundFourSpawnCount = direRoundFourSpawnCount + 1
-	--print ("Number of Dire Round 4 Creeps = " .. direRoundFourSpawnCount)
-
-
 end
 
 --[[
@@ -1784,17 +1769,17 @@ function HeroWarsGameMode:SpawnSpecialWaveUnits(unitType, team)
 	end
 
 	--archer reinforcements
-	if unitType == "npc_dota_wave_archer_reinforcements_lvlone" then
-		numberToSpawn = 3
-		waves = 10
-	elseif unitType == "npc_dota_wave_archer_reinforcements_lvltwo" then
-		numberToSpawn = 3
-		waves = 10
-	elseif unitType == "npc_dota_wave_archer_reinforcements_lvlthree" then
+	if unitType == "npc_dota_wave_archer_reinforcements_lvlone" or unitType == "npc_dota_wave_archer_reinforcements_lvltwo" or unitType == "npc_dota_wave_archer_reinforcements_lvlthree" then
 		numberToSpawn = 3
 		waves = 10
 	end
 	
+	--archer assassins
+	if unitType == "npc_dota_wave_archer_assassins_lvlone" or unitType == "npc_dota_wave_archer_assassins_lvltwo" or unitType == "npc_dota_wave_archer_assassins_lvlthree" then
+		numberToSpawn = 2
+		waves = 10
+	end
+
 	--testing/play
 	if unitType == "npc_dota_furbolg_champion" then
 		numberToSpawn = 3

@@ -773,27 +773,11 @@ function UpgradeCreepWave(keys)
 	--get the team, we need it
 	local team = keys.caster:GetTeam() -- int?
 
-	--print ("The team that is attempting to upgrade the creeps is: " .. team)
-	if team == 2 then
-		local prevEnt
-		for i=1, #RADIANT_ARMORIES do 
-			local buildingName = RADIANT_ARMORIES[i]
-			local buildingEnt = Entities:FindByName(prevEnt, buildingName)
-			local _ability = buildingEnt:GetAbilityByIndex(0)
-			_ability:StartCooldown(cooldown)
-		end
-	elseif team == 3 then
-		local prevEnt
-		for i=1, #DIRE_ARMORIES do 
-			local buildingName = DIRE_ARMORIES[i]
-			local buildingEnt = Entities:FindByName(prevEnt, buildingName)
-			local _ability = buildingEnt:GetAbilityByIndex(0)
-			_ability:StartCooldown(cooldown)
-		end
-	else
-		print ("HWERROR: WARNING: NO TEAM VALUE FOUND EXITING!")
-	end
+	--[[
+	Validation
+	]]
 
+	--Check if the team has the max upgraded creep wave level
 	if team == 2 then
 		--print ("RADIANT Creep Upgrade Attempt")
 		--now check to see if upgrading this creep wave will cause us to exceed the upgrade limit
@@ -816,9 +800,7 @@ function UpgradeCreepWave(keys)
 		print ("HWERROR: WARNING: NO TEAM VALUE FOUND EXITING!")
 	end
 
-	--check for required gold/food and dont charge for one without the other
-
-
+	--Check to see if the player has enough gold, and reset the cooldown if he doesn't (the cooldown fires regardless)
 	if playerGold > goldCost then 
 		ownerHero:SpendGold(goldCost, 5) --works but the API is bugged. Says expects 3 params, but only needs 2 since player id was the first it expected.
 	else -- they dont have the money so just return?
@@ -827,8 +809,33 @@ function UpgradeCreepWave(keys)
 		return
 	end
 
-	--we need to check the team so we can upgrade that team, the player in this case only matters for charging gold.
-	-- TEAMS - 1 - neutrals, 2 - radiant, 3 - dire - I THINK!!!!
+	--[[
+	Execution
+	]]
+
+	--Start the cooldown for all players on the team
+	StartGlobalCooldown(team, 0, cooldown)
+	-- if team == 2 then
+	-- 	local prevEnt
+	-- 	for i=1, #RADIANT_ARMORIES do 
+	-- 		local buildingName = RADIANT_ARMORIES[i]
+	-- 		local buildingEnt = Entities:FindByName(prevEnt, buildingName)
+	-- 		local _ability = buildingEnt:GetAbilityByIndex(0)
+	-- 		_ability:StartCooldown(cooldown)
+	-- 	end
+	-- elseif team == 3 then
+	-- 	local prevEnt
+	-- 	for i=1, #DIRE_ARMORIES do 
+	-- 		local buildingName = DIRE_ARMORIES[i]
+	-- 		local buildingEnt = Entities:FindByName(prevEnt, buildingName)
+	-- 		local _ability = buildingEnt:GetAbilityByIndex(0)
+	-- 		_ability:StartCooldown(cooldown)
+	-- 	end
+	-- else
+	-- 	print ("HWERROR: WARNING: NO TEAM VALUE FOUND EXITING!")
+	-- end
+
+	--upgrade the wave for the appopriate team
 	if team == 2 then
 		print ("RADIANT Creep Upgrade")
 		--upgrade the creep level
@@ -851,6 +858,7 @@ function SpawnSpecialCreepWave(keys)
 --Called by OnChannelSucceeded
 --Summons a wave of additional creeps to go with the base wave. All resource/interruption checking has been completed.
 --Upgraded waves based on rounds are controlled here as is controlling the cooldown and upgrading of the archer waves.
+--** The cost of Archer Reinforcements and Archer Assassins is handled here, unlike Windigo/Hydras **
 --Returns: nothing	
 
 	local owner = keys.caster:GetOwner() --handle
@@ -863,7 +871,8 @@ function SpawnSpecialCreepWave(keys)
 	local unitType = keys.UnitType --string ""
 	-- store the player gold for less typing
 	local playerGold = ownerHero:GetGold() --int
-
+	local cooldown = keys.Cooldown --float
+	--print("HWDEBUG: Cooldown = " .. cooldown)
 	--get the team, we need it
 	local team = keys.caster:GetTeam() -- int?
 	--print ("HWDEBUG: *** SPAWNSPECIALWAVE BUTTON PRESSED ***")
@@ -894,30 +903,64 @@ function SpawnSpecialCreepWave(keys)
 		end
 	end
 
-	--We only need this check here now to deal with waves that dont require channel (archers and archer assassins)
-	--archer assasins need their own thing are they shared as a team?
-	if unitType == "npc_dota_wave_archer_reinforcements_lvlone" or unitType == "npc_dota_wave_archer_reinforcements_lvltwo" or unitType == "npc_dota_wave_archer_reinforcements_lvlthree" then
-		local _ability = keys.caster:GetAbilityByIndex(1)
-		-- could use keys.ability here as per IRC
-		--print ("HWDEBUG: _ability.name = " .. _ability:GetAbilityName())
-		local _hasUsedArchers = false
-		if playerGold > goldCost then
-			--check to see if we can consume the food required. ConsumeFood will consume the foodcast passed to it or it will return false
-			--print("HWDEBUG: The player has enough money to use this skill")
-			--charge the owner's hero gold, reason 5 should equal DOTA_ModifyGold_PurchaseItem 
-			ownerHero:SpendGold(goldCost, 5) --works but the API is bugged. Says expects 3 params, but only needs 2 since player id was the first it expected.
-			--need to do something here maybe a timer
-			_hasUsedArchers = true
-		else -- they dont have the money so just return?
-			--do else stuff
-			print("HWERROR: Not enough gold!!")
-			if not _hasUsedArchers then
-				_ability:EndCooldown()
-			end
-			return
+	--Automatically adjust the creep waves for archer assassins to be the proper UnitType
+	if unitType == "npc_dota_wave_archer_assassins_lvlone" then
+		if HeroWarsGameMode.nRoundNumber >= 2 and HeroWarsGameMode.nRoundNumber <= 3 then
+			unitType = "npc_dota_wave_archer_assassins_lvltwo"
+		elseif HeroWarsGameMode.nRoundNumber > 3 then
+			unitType = "npc_dota_wave_archer_assassins_lvlthree"
 		end
 	end
 
+	-- ^ need a matching block for archer assassins
+
+	--Handle cooldowns and gold cost of both archers
+	--We only need this check here now to deal with waves that dont require channel (archers and archer assassins)
+	if unitType == "npc_dota_wave_archer_reinforcements_lvlone" or unitType == "npc_dota_wave_archer_reinforcements_lvltwo" or unitType == "npc_dota_wave_archer_reinforcements_lvlthree" or unitType == "npc_dota_wave_archer_assassins_lvlone" or unitType == "npc_dota_wave_archer_assassins_lvltwo" or unitType == "npc_dota_wave_archer_assassins_lvlthree" then
+		if playerGold > goldCost then 
+			ownerHero:SpendGold(goldCost, 5)
+		else 
+			print("HWERROR: Not enough gold!!")
+			keys.ability:EndCooldown()
+			return
+		end
+		local abilityIndex = keys.ability:GetAbilityIndex()
+		StartGlobalCooldown(team, abilityIndex, cooldown)
+	end
+
+	--Spawn the Units!!
 	HeroWarsGameMode:SpawnSpecialWaveUnits(unitType, team)
 end
 
+--[[
+	*** UTILITY ***
+]]
+
+function StartGlobalCooldown(team, abiIdx, cooldown)
+--Starts a global cooldown on an ability for a team
+--Called by various
+--@params
+--team - The team for which the global cooldown should be fired
+--abiIdx - The ability index of the ability
+--cooldown - The cooldown
+--Returns: nothing	
+	if team == 2 then
+		local prevEnt
+		for i=1, #RADIANT_ARMORIES do 
+			local buildingName = RADIANT_ARMORIES[i]
+			local buildingEnt = Entities:FindByName(prevEnt, buildingName)
+			local _ability = buildingEnt:GetAbilityByIndex(abiIdx)
+			_ability:StartCooldown(cooldown)
+		end
+	elseif team == 3 then
+		local prevEnt
+		for i=1, #DIRE_ARMORIES do 
+			local buildingName = DIRE_ARMORIES[i]
+			local buildingEnt = Entities:FindByName(prevEnt, buildingName)
+			local _ability = buildingEnt:GetAbilityByIndex(abiIdx)
+			_ability:StartCooldown(cooldown)
+		end
+	else
+		print ("HWERROR: WARNING: NO TEAM VALUE FOUND EXITING!")
+	end
+end
